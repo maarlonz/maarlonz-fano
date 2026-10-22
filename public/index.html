@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#0b1d2e">
+<title>Fano Insieme</title>
+<meta name="description" content="Mappa di Fano con ristoranti, aperitivi e luoghi storici. Chatta e incontrati con nuove persone.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ INTRO / REGISTRAZIONE ============ -->
+<section id="intro" class="intro">
+  <div class="sky">
+    <div class="sun"></div>
+    <div class="stars"></div>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <path class="w w1" d="M0,160 C240,220 480,100 720,150 C960,200 1200,120 1440,160 L1440,320 L0,320 Z"/>
+    <path class="w w2" d="M0,200 C240,150 480,250 720,200 C960,150 1200,240 1440,200 L1440,320 L0,320 Z"/>
+    <path class="w w3" d="M0,240 C300,210 520,280 760,250 C1000,220 1220,280 1440,250 L1440,320 L0,320 Z"/>
+  </svg>
+
+  <div class="intro-inner">
+    <p class="kicker reveal" style="--d:0">Fanum Fortunae · dal 9 d.C.</p>
+    <h1 class="title reveal" style="--d:1">Fano <em>Insieme</em></h1>
+    <p class="lead reveal" style="--d:2">Scopri dove mangiare, dove fare l'aperitivo e i luoghi più belli della città.<br>Chatta, fai nuove amicizie e decidete insieme dove vedervi.</p>
+
+    <form id="joinForm" class="join reveal" style="--d:3" autocomplete="off">
+      <div class="emoji-row" id="emojiRow" role="radiogroup" aria-label="Scegli il tuo avatar"></div>
+      <div class="join-field">
+        <input id="nickInput" maxlength="20" placeholder="Scegli un nickname" aria-label="Nickname" required>
+        <button type="submit" class="btn-primary" id="joinBtn"><span>Entra</span><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <p class="join-hint">Niente email, niente password. Solo un nickname.</p>
+      <button type="button" class="how-link" id="introHelp">Come funziona? Guarda il tutorial →</button>
+      <p class="join-error" id="joinError" role="alert"></p>
+    </form>
+
+    <div class="stats reveal" style="--d:4">
+      <div><b data-count="ristoranti">0</b><span>ristoranti</span></div>
+      <div><b data-count="aperitivi">0</b><span>bar &amp; aperitivi</span></div>
+      <div><b data-count="storia">0</b><span>luoghi storici</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APP ============ -->
+<main id="app" class="app" hidden>
+  <div id="map" class="map" aria-label="Mappa di Fano"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span>Fano <em>Insieme</em></div>
+    <div class="top-actions">
+      <button class="icon-btn" id="helpBtn" title="Tutorial" aria-label="Apri il tutorial"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.8"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/></svg></button>
+      <button class="icon-btn" id="locateBtn" title="La mia posizione" aria-label="La mia posizione"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7.5"/></svg></button>
+      <button class="icon-btn" id="themeBtn" title="Tema" aria-label="Cambia tema"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="me-chip" id="meChip" title="Esci"><span class="avatar" id="meAvatar"></span><span id="meNick"></span></button>
+    </div>
+  </header>
+
+  <div class="chips-bar" id="chips"></div>
+
+  <aside class="panel" id="panel">
+    <div class="sheet-handle" id="sheetHandle"><span></span></div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" class="tab active" data-tab="explore"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Esplora</span></button>
+      <button role="tab" class="tab" data-tab="chat"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/></svg><span>Chat</span><i class="badge" id="chatBadge"></i></button>
+      <button role="tab" class="tab" data-tab="meet"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg><span>Incontri</span><i class="badge" id="meetBadge"></i></button>
+      <button role="tab" class="tab" data-tab="people"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2A5 5 0 0 1 21.5 19"/></svg><span>Persone</span><i class="badge online" id="peopleBadge"></i></button>
+      <span class="tab-ink" id="tabInk"></span>
+    </nav>
+
+    <!-- Esplora -->
+    <section class="view active" data-view="explore">
+      <div class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="search" placeholder="Cerca un locale, una via, un monumento…" aria-label="Cerca">
+      </div>
+      <div class="list-meta" id="listMeta"></div>
+      <ul class="place-list" id="placeList"></ul>
+    </section>
+
+    <!-- Chat -->
+    <section class="view" data-view="chat">
+      <div class="convs" id="convs"></div>
+      <div class="loc-bar" id="locBar"></div>
+      <div class="messages" id="messages" aria-live="polite"></div>
+      <form class="composer" id="composer" autocomplete="off">
+        <button type="button" class="icon-btn small" id="attachPlace" title="Condividi un luogo" aria-label="Condividi un luogo"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></button>
+        <div class="attach-chip" id="attachChip" hidden></div>
+        <input id="msgInput" maxlength="500" placeholder="Scrivi in piazza…" aria-label="Messaggio">
+        <button class="send" aria-label="Invia"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/></svg></button>
+      </form>
+    </section>
+
+    <!-- Incontri -->
+    <section class="view" data-view="meet">
+      <div class="meet-head">
+        <div>
+          <h3>Incontri in programma</h3>
+          <p>Unisciti a un ritrovo o proponine uno: scegli un luogo sulla mappa.</p>
+        </div>
+        <button class="btn-primary sm" id="newMeetBtn">+ Proponi</button>
+      </div>
+      <ul class="meet-list" id="meetList"></ul>
+    </section>
+
+    <!-- Persone -->
+    <section class="view" data-view="people">
+      <div class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="peopleSearch" placeholder="Cerca una persona…" aria-label="Cerca una persona">
+      </div>
+      <div class="people" id="peopleList"></div>
+    </section>
+  </aside>
+
+  <!-- Scheda luogo -->
+  <article class="place-card" id="placeCard" aria-hidden="true"></article>
+
+  <div class="pick-banner" id="pickBanner" hidden>
+    <span>📍 Tocca la mappa nel punto in cui ti trovi</span>
+    <button type="button" id="pickCancel">Annulla</button>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+</main>
+
+<!-- Tutorial -->
+<div class="tut" id="tut" hidden role="dialog" aria-modal="true" aria-labelledby="tutTitle">
+  <div class="tut-card" id="tutCard">
+    <button class="tut-skip" id="tutSkip" type="button">Salta</button>
+    <div class="tut-stage" id="tutStage"></div>
+    <div class="tut-foot">
+      <div class="tut-dots" id="tutDots"></div>
+      <div class="tut-nav">
+        <button class="btn-ghost" id="tutPrev" type="button">Indietro</button>
+        <button class="btn-primary sm" id="tutNext" type="button">Avanti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modale incontro -->
+<dialog id="meetDialog" class="dialog">
+  <form method="dialog" id="meetForm">
+    <h3>Proponi un incontro</h3>
+    <label>Luogo
+      <select id="meetPlace" required></select>
+    </label>
+    <label>Titolo
+      <input id="meetTitle" maxlength="60" placeholder="Aperitivo al tramonto 🍹" required>
+    </label>
+    <label>Quando
+      <input id="meetWhen" type="datetime-local" required>
+    </label>
+    <label>Note <span class="opt">(facoltative)</span>
+      <textarea id="meetNote" maxlength="240" rows="2" placeholder="Ci troviamo davanti all'ingresso…"></textarea>
+    </label>
+    <div class="dialog-actions">
+      <button value="cancel" formnovalidate class="btn-ghost">Annulla</button>
+      <button value="ok" class="btn-primary sm" id="meetSubmit">Pubblica</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Modale scelta luogo per la chat -->
+<dialog id="pickDialog" class="dialog">
+  <form method="dialog">
+    <h3>Condividi un luogo</h3>
+    <input id="pickSearch" placeholder="Cerca…" aria-label="Cerca luogo">
+    <ul class="pick-list" id="pickList"></ul>
+    <div class="dialog-actions"><button value="cancel" class="btn-ghost">Chiudi</button></div>
+  </form>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

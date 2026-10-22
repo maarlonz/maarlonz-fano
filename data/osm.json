@@ -1,0 +1,4274 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-21T22:11:36Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1490290853,
+  "lat": 43.8300122,
+  "lon": 13.0183968,
+  "tags": {
+    "amenity": "bar",
+    "name": "Airport Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 1490413419,
+  "lat": 43.8360641,
+  "lon": 13.0177749,
+  "tags": {
+    "addr:housenumber": "99",
+    "addr:postcode": "61032",
+    "addr:street": "Via Gabrielangelo Gabrielli",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "cuisine": "pizza",
+    "name": "Pizzeria Il Gecko"
+  }
+},
+{
+  "type": "node",
+  "id": 1597863311,
+  "lat": 43.8319948,
+  "lon": 13.0031912,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "cuisine": "italian",
+    "name": "Ristorante da Fiore"
+  }
+},
+{
+  "type": "node",
+  "id": 1598001258,
+  "lat": 43.8443516,
+  "lon": 13.0183095,
+  "tags": {
+    "addr:street": "Piazza Venti settembre",
+    "check_date": "2024-10-29",
+    "contact:email": "fano@sistemamuseo.it",
+    "contact:website": "https://museocivico.comune.fano.pu.it/",
+    "museum": "archaeological",
+    "name": "Museo archeologico e Pinacoteca del Palazzo Malatestiano",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 1869366317,
+  "lat": 43.8313321,
+  "lon": 13.0499921,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "14",
+    "addr:postcode": "61032",
+    "addr:street": "Via Lucio Domizio Aureliano",
+    "amenity": "restaurant",
+    "coffee:brand": "ABC",
+    "contact:phone": "+39 338 3355884",
+    "cuisine": "pizza",
+    "name": "La Locanda dei Cesari",
+    "ref:vatin": "IT02681330417"
+  }
+},
+{
+  "type": "node",
+  "id": 1996688335,
+  "lat": 43.8417150,
+  "lon": 13.0297234,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Villa Marina"
+  }
+},
+{
+  "type": "node",
+  "id": 2047995071,
+  "lat": 43.8511711,
+  "lon": 13.0162229,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "270",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "alt_name": "Bar Giuliano",
+    "amenity": "bar",
+    "contact:email": "info@caffedelporto.it",
+    "contact:phone": "+39 0721 804579",
+    "contact:website": "http://www.caffedelporto.it/",
+    "internet_access": "yes",
+    "name": "Caffè del Porto",
+    "operator": "Palazzini Stefania & C. s.n.c.",
+    "ref:vatin": "IT01231360411",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2047995072,
+  "lat": 43.8508386,
+  "lon": 13.0123142,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "bar",
+    "indoor_seating": "yes",
+    "name": "greenbar",
+    "nohousenumber": "yes",
+    "operator": "GB srl",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02540080419"
+  }
+},
+{
+  "type": "node",
+  "id": 2055381909,
+  "lat": 43.8211538,
+  "lon": 13.0089830,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "138b",
+    "addr:postcode": "61032",
+    "addr:street": "Via Bellandra",
+    "amenity": "cafe",
+    "name": "Polvere di caffè",
+    "ref:vatin": "IT02408560411"
+  }
+},
+{
+  "type": "node",
+  "id": 2055381918,
+  "lat": 43.8233128,
+  "lon": 13.0048260,
+  "tags": {
+    "amenity": "bar"
+  }
+},
+{
+  "type": "node",
+  "id": 2140878884,
+  "lat": 43.8501275,
+  "lon": 13.0134893,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "70/72",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "cuisine": "piadina",
+    "name": "Buena Siesta"
+  }
+},
+{
+  "type": "node",
+  "id": 2140878888,
+  "lat": 43.8433514,
+  "lon": 13.0170843,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "170",
+    "addr:postcode": "61032",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "cafe",
+    "name": "La Bomboniera",
+    "phone": "+39 0721 830532"
+  }
+},
+{
+  "type": "node",
+  "id": 2192749485,
+  "lat": 43.8154661,
+  "lon": 13.0003396,
+  "tags": {
+    "amenity": "bar",
+    "name": "Bar Monica"
+  }
+},
+{
+  "type": "node",
+  "id": 2192751651,
+  "lat": 43.8185818,
+  "lon": 12.9926684,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2025-11-02",
+    "name": "Ristorante Pizzeria Da Angelo"
+  }
+},
+{
+  "type": "node",
+  "id": 2418085744,
+  "lat": 43.8316581,
+  "lon": 12.9899266,
+  "tags": {
+    "addr:housenumber": "94",
+    "addr:postcode": "61032",
+    "addr:street": "Via Brigata Messina",
+    "amenity": "bar",
+    "name": "Bar Franco",
+    "operator": "Roberti Alessio & c.",
+    "ref:vatin": "IT02555160411"
+  }
+},
+{
+  "type": "node",
+  "id": 2480534968,
+  "lat": 43.8329186,
+  "lon": 13.0422159,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "117",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Piceno",
+    "amenity": "bar",
+    "name": "Le Cinéma",
+    "ref:vatin": "IT01858850595"
+  }
+},
+{
+  "type": "node",
+  "id": 2736139714,
+  "lat": 43.8458061,
+  "lon": 13.0182353,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "7",
+    "addr:postcode": "61032",
+    "addr:street": "Via Mura Malatestiane",
+    "amenity": "pub",
+    "name": "Green Pub",
+    "opening_hours": "Mo-Su 18:00-02:30"
+  }
+},
+{
+  "type": "node",
+  "id": 2993925394,
+  "lat": 43.8515567,
+  "lon": 13.0078450,
+  "tags": {
+    "historic": "ruins",
+    "name": "Santa Maria a Mare",
+    "ruins": "church"
+  }
+},
+{
+  "type": "node",
+  "id": 3545352258,
+  "lat": 43.8505307,
+  "lon": 13.0180882,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "42",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "name": "Trattoria Quinta",
+    "opening_hours": "Mo-Sa 12:15-14:30, 19:00-22:00",
+    "phone": "+39 0721 808043"
+  }
+},
+{
+  "type": "node",
+  "id": 3668387152,
+  "lat": 43.8458523,
+  "lon": 13.0132612,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "11",
+    "addr:postcode": "61032",
+    "addr:street": "Via Mura Augustee",
+    "amenity": "cafe",
+    "name": "Gelateria Pino Bar",
+    "phone": "+39 0721 803339",
+    "ref:vatin": "IT00889630414",
+    "website": "http://www.pinobar.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 3668396968,
+  "lat": 43.8432897,
+  "lon": 13.0179617,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "33",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Venti settembre",
+    "amenity": "fast_food",
+    "cuisine": "piadina",
+    "name": "Me La Tiro Piadineria Artigianale",
+    "old_name": "Da Gico & Ele",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3675008245,
+  "lat": 43.8207142,
+  "lon": 13.0248167,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "50",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Enrico Mattei",
+    "amenity": "restaurant",
+    "bar": "yes",
+    "cuisine": "italian",
+    "email": "airbaronerosso@alice.it",
+    "name": "Il Barone Rosso",
+    "phone": "+39 0721 865835",
+    "website": "http://www.ristorantebaronerosso.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 3688160663,
+  "lat": 43.8442505,
+  "lon": 13.0156517,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "104",
+    "addr:postcode": "61032",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "cuisine": "ice_cream",
+    "entrance": "yes",
+    "name": "Caffè Centrale",
+    "outdoor_seating": "yes",
+    "phone": "+39 0721 801417"
+  }
+},
+{
+  "type": "node",
+  "id": 3707592941,
+  "lat": 43.8507780,
+  "lon": 13.0139542,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "5",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "restaurant",
+    "indoor_seating": "yes",
+    "name": "Karma",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3736250738,
+  "lat": 43.8455949,
+  "lon": 13.0262702,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "17",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Ristorantino La Barchetta",
+    "phone": "+39 0721 824211"
+  }
+},
+{
+  "type": "node",
+  "id": 3771635527,
+  "lat": 43.8150360,
+  "lon": 13.0044867,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "4a",
+    "addr:postcode": "61032",
+    "addr:street": "Via Paolo Borsellino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Studio 54",
+    "operator": "Macondo",
+    "phone": "+39 0721 867936",
+    "ref:vatin": "IT02515800411",
+    "website": "https://www.studio54fano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 4000809437,
+  "lat": 43.8357096,
+  "lon": 13.0177325,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via Gabrielangelo Gabrielli",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 808220",
+    "name": "Peccati di Gola",
+    "opening_hours": "Mo-Su 06:00-20:00",
+    "ref:vatin": "IT02542050410"
+  }
+},
+{
+  "type": "node",
+  "id": 4012871469,
+  "lat": 43.8425121,
+  "lon": 13.0179768,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "19",
+    "addr:postcode": "61032",
+    "addr:street": "Via de' Giorgi",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Il Gattopardo",
+    "phone": "+39 335 7907948",
+    "smoking": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4170565689,
+  "lat": 43.8109231,
+  "lon": 13.0162050,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "16",
+    "addr:street": "Località Chiaruccia",
+    "amenity": "bar",
+    "contact:phone": "+39 0721 860083",
+    "name": "Bomber bar",
+    "ref:vatin": "IT02498710413"
+  }
+},
+{
+  "type": "node",
+  "id": 4205726989,
+  "lat": 43.8483759,
+  "lon": 13.0212195,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "50",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cristoforo Colombo",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 396175",
+    "cuisine": "ice_cream",
+    "name": "Caffè Victory",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT01305190413",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4205726990,
+  "lat": 43.8482178,
+  "lon": 13.0219618,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1e",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "cafe",
+    "cuisine": "ice_cream;pizza",
+    "name": "Adriatico",
+    "outdoor_seating": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4211160392,
+  "lat": 43.8233980,
+  "lon": 13.0539559,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "11",
+    "addr:postcode": "61032",
+    "addr:street": "Via della Tombaccia",
+    "amenity": "bar",
+    "contact:phone": "+39 331 7674897",
+    "name": "Zanzibar"
+  }
+},
+{
+  "type": "node",
+  "id": 4221298382,
+  "lat": 43.8480651,
+  "lon": 13.0222167,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "7a",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "Cesa pizzeria"
+  }
+},
+{
+  "type": "node",
+  "id": 4221298384,
+  "lat": 43.8467260,
+  "lon": 13.0243750,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "49",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Battisti",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 580718",
+    "cuisine": "ice_cream",
+    "name": "Caffè Cristallo",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02451100412",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4225292718,
+  "lat": 43.8385085,
+  "lon": 13.0112355,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "8a",
+    "addr:street": "Via della Costituzione",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 829078",
+    "name": "Il caffè del pasticciere",
+    "opening_hours": "Mo, We-Su 06:00-01:00",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT01014590416"
+  }
+},
+{
+  "type": "node",
+  "id": 4225383003,
+  "lat": 43.8414334,
+  "lon": 12.9690234,
+  "tags": {
+    "addr:city": "Fenile",
+    "addr:housenumber": "10",
+    "addr:street": "Via del Mulino",
+    "amenity": "bar",
+    "contact:phone": "+39 0721 1695163",
+    "cuisine": "pizza",
+    "name": "Bar pizzeria Il Mulino",
+    "operator": "Catena Francesca & c.",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02357450416",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4226806023,
+  "lat": 43.8430246,
+  "lon": 13.0087281,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "27",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giuseppe Tomassoni",
+    "amenity": "cafe",
+    "brand": "Longhini",
+    "contact:phone": "+39 0721 805113",
+    "name": "Panama Bakery Café",
+    "opening_hours": "Mo-Su 06:30-20:00",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4226806024,
+  "lat": 43.8414034,
+  "lon": 13.0044893,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "name": "Pasticceria Le terrazze",
+    "opening_hours:signed": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4246497003,
+  "lat": 43.8339797,
+  "lon": 13.0392383,
+  "tags": {
+    "addr:housenumber": "56",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Piceno",
+    "amenity": "fast_food",
+    "brand": "McDonald's",
+    "brand:wikidata": "Q38076",
+    "brand:wikipedia": "en:McDonald's",
+    "contact:phone": "+39 0721 1953149",
+    "cuisine": "burger",
+    "indoor_seating": "yes",
+    "internet_access": "wlan",
+    "name": "McDonald's",
+    "operator": "MAGICA",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02650150424",
+    "takeaway": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4265183777,
+  "lat": 43.8523963,
+  "lon": 13.0214953,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "24",
+    "addr:postcode": "61032",
+    "addr:street": "Lungomare Mediterraneo",
+    "alt_name": "Fish House",
+    "amenity": "restaurant",
+    "contact:email": "fano@cheffishhouse.com",
+    "contact:phone": "+39 0721 820873",
+    "contact:website": "http://www.cheffishhouse.com/",
+    "cuisine": "fish",
+    "name": "O'Fish osteria di mare",
+    "note": "Chiuso durante l'estate 2016",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4279969418,
+  "lat": 43.8607967,
+  "lon": 12.9929544,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "150",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Romagna",
+    "amenity": "cafe",
+    "brand": "Il caffè del pasticciere",
+    "contact:phone": "+39 334 3924834",
+    "name": "Le dolcezze del Pasticciere",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT01014590416"
+  }
+},
+{
+  "type": "node",
+  "id": 4279969419,
+  "lat": 43.8355887,
+  "lon": 13.0051335,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "126",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "cafe",
+    "contact:phone": "+39 327 8857205",
+    "name": "Lievito Madre",
+    "old_name": "Pan Brioches",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 4305317482,
+  "lat": 43.8497159,
+  "lon": 13.0132146,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "58",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 807277",
+    "name": "Bon Bon",
+    "operator": "Jolly",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02455400412",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4305317483,
+  "lat": 43.8523510,
+  "lon": 13.0082444,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via del Moletto",
+    "amenity": "cafe",
+    "contact:phone": "+39 328 4783417",
+    "name": "Il Baretto",
+    "nohousenumber": "yes",
+    "operator": "Sunrise",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02539930418"
+  }
+},
+{
+  "type": "node",
+  "id": 4306696650,
+  "lat": 43.8336950,
+  "lon": 13.0045610,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "23",
+    "addr:postcode": "61032",
+    "addr:street": "Via Palmiro Togliatti",
+    "air_conditioning": "yes",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:fax": "+39 0721 860820",
+    "contact:phone": "+39 0721 864910",
+    "contact:website": "http://www.guerrino.it",
+    "craft": "caterer",
+    "name": "Pasticceria Guerrino",
+    "operator": "Dolcecaffè srl",
+    "ref:vatin": "IT02653130415",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "node",
+  "id": 4340252009,
+  "lat": 43.8266094,
+  "lon": 13.0076023,
+  "tags": {
+    "addr:housenumber": "26l",
+    "addr:street": "Via Galileo Galilei",
+    "amenity": "bar",
+    "name": "I King Bar",
+    "operator": "Gramegna Andrea",
+    "ref:vatin": "IT02608870412"
+  }
+},
+{
+  "type": "node",
+  "id": 4350361894,
+  "lat": 43.8403599,
+  "lon": 13.0104998,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "13a",
+    "addr:postcode": "61032",
+    "addr:street": "Via Fanella",
+    "amenity": "cafe",
+    "contact:phone": "+39 333 9101726",
+    "name": "Pasticceria Arturo",
+    "operator": "Mei Massimo",
+    "ref:vatin": "IT02186420416"
+  }
+},
+{
+  "type": "node",
+  "id": 4404815589,
+  "lat": 43.8415332,
+  "lon": 13.0079896,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "2",
+    "addr:place": "Piazza Don Giovanni Minzoni",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 863934",
+    "name": "Bar tabaccheria Tresette",
+    "operator": "Ducci Mariacristina",
+    "ref:vatin": "IT01238620411"
+  }
+},
+{
+  "type": "node",
+  "id": 4405046460,
+  "lat": 43.8463627,
+  "lon": 13.0139064,
+  "tags": {
+    "addr:housenumber": "14",
+    "addr:postcode": "61032",
+    "addr:street": "Via Mura Augustee",
+    "amenity": "biergarten",
+    "check_date": "2024-10-29",
+    "microbrewery": "yes",
+    "name": "Casa Renton",
+    "operator": "Renton",
+    "ref:vatin": "IT02542360413"
+  }
+},
+{
+  "type": "node",
+  "id": 4425361725,
+  "lat": 43.8463124,
+  "lon": 13.0234270,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "122",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Dante Alighieri",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:facebook": "https://www.facebook.com/sassoniacaffe/",
+    "contact:phone": "+39 0721 826730",
+    "name": "Sassonia Caffè",
+    "opening_hours": "06:30-20:00; PH off"
+  }
+},
+{
+  "type": "node",
+  "id": 4449899804,
+  "lat": 43.8270030,
+  "lon": 12.9945436,
+  "tags": {
+    "addr:housenumber": "22b",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Flaminia",
+    "amenity": "cafe",
+    "name": "Velox Bar",
+    "operator": "Maggiore Mauro",
+    "ref:vatin": "IT02319780413",
+    "sells:tobacco": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4483042205,
+  "lat": 43.8351575,
+  "lon": 13.0373852,
+  "tags": {
+    "addr:housenumber": "34",
+    "addr:street": "Viale Piceno",
+    "amenity": "bar",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 823005",
+    "name": "Va Tranquill",
+    "ref:vatin": "IT01214110411",
+    "sells:tobacco": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4556078284,
+  "lat": 43.8259512,
+  "lon": 13.0117855,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "64",
+    "addr:postcode": "61032",
+    "addr:street": "Via Sant'Eusebio",
+    "amenity": "cafe",
+    "contact:phone": "+39 342 0499100",
+    "name": "Bar El Paso",
+    "operator": "Salucci Giada",
+    "ref:vatin": "IT02490940414",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4585408439,
+  "lat": 43.8428131,
+  "lon": 13.0135305,
+  "tags": {
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 4585408592,
+  "lat": 43.8449176,
+  "lon": 13.0129224,
+  "tags": {
+    "barrier": "entrance",
+    "bicycle": "yes",
+    "foot": "yes",
+    "historic": "city_gate",
+    "name": "Porta della Mandria",
+    "wikidata": "Q84604036"
+  }
+},
+{
+  "type": "node",
+  "id": 4717578299,
+  "lat": 43.8343081,
+  "lon": 13.0387223,
+  "tags": {
+    "addr:housenumber": "50",
+    "addr:street": "Viale Piceno",
+    "amenity": "bar",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 806736",
+    "name": "Driver Bar",
+    "operator": "Burrai Raimondo",
+    "ref:vatin": "IT02080140417"
+  }
+},
+{
+  "type": "node",
+  "id": 4717578300,
+  "lat": 43.8381776,
+  "lon": 13.0321495,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "150",
+    "addr:postcode": "61032",
+    "addr:street": "Via Carlo Pisacane",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 804936",
+    "name": "Snack BAR",
+    "operator": "Berretta Mara",
+    "ref:vatin": "IT01102940416",
+    "sells:tobacco": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4740651365,
+  "lat": 43.8387290,
+  "lon": 13.0099710,
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "61032",
+    "addr:street": "Via dell'Abbazia",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 329 1798767",
+    "name": "New Life Café",
+    "operator": "New Life",
+    "ref:vatin": "IT02610930410"
+  }
+},
+{
+  "type": "node",
+  "id": 4791672805,
+  "lat": 43.8135015,
+  "lon": 13.0185339,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "29 B",
+    "addr:postcode": "61032",
+    "addr:street": "Via Papiria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Locanda dei Casta",
+    "phone": "+39 0721 861302",
+    "website": "https://www.locandadeicasta.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 4989800290,
+  "lat": 43.8180713,
+  "lon": 12.9909183,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "80",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Flaminia",
+    "amenity": "cafe",
+    "check_date": "2025-11-10",
+    "contact:phone": "+39 329 3570514",
+    "name": "MoMa' Caffè",
+    "old_name": "Bar Rosciano",
+    "ref:vatin": "IT02777410412"
+  }
+},
+{
+  "type": "node",
+  "id": 5047066586,
+  "lat": 43.8438276,
+  "lon": 13.0201379,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Piazza Guglielmo Marconi",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 807417",
+    "name": "Caffetteria Marconi",
+    "operator": "Subissati Nicoletta",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT01278640410"
+  }
+},
+{
+  "type": "node",
+  "id": 5215107151,
+  "lat": 43.8511405,
+  "lon": 13.0161394,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "268",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 827498",
+    "cuisine": "pizza",
+    "delivery": "yes",
+    "name": "Pizz'Art",
+    "ref:vatin": "IT02379200419",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5224668064,
+  "lat": 43.8159298,
+  "lon": 13.0182845,
+  "tags": {
+    "addr:housenumber": "25C-D",
+    "addr:postcode": "61032",
+    "addr:street": "Via Papiria",
+    "amenity": "bar",
+    "contact:phone": "+39 0721 867700",
+    "name": "Il Buon Caffè",
+    "ref:vatin": "IT02551640416"
+  }
+},
+{
+  "type": "node",
+  "id": 5224668067,
+  "lat": 43.8353616,
+  "lon": 13.0048433,
+  "tags": {
+    "addr:housenumber": "130",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "bar",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 862490",
+    "name": "Bar Nazionale",
+    "operator": "Morelli Marzio",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT01101400412"
+  }
+},
+{
+  "type": "node",
+  "id": 5262599527,
+  "lat": 43.8449128,
+  "lon": 13.0169226,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "18",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Andrea Costa",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 1704178",
+    "name": "Caffè Darderi",
+    "operator": "Sabbatini Davide e Chiara",
+    "ref:vatin": "IT02618320416"
+  }
+},
+{
+  "type": "node",
+  "id": 5262599528,
+  "lat": 43.8400902,
+  "lon": 13.0195547,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1",
+    "addr:postcode": "61032",
+    "addr:street": "Via Camillo Benso conte di Cavour",
+    "amenity": "cafe",
+    "name": "Caffè Cavour",
+    "outdoor_seating": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5272752920,
+  "lat": 43.8611736,
+  "lon": 12.9915597,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "7a",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Adriatica Nord",
+    "amenity": "bar",
+    "contact:phone": "+39 0721 823348",
+    "indoor_seating": "yes",
+    "name": "Bar Notturno",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5272782169,
+  "lat": 43.8427510,
+  "lon": 13.0171654,
+  "tags": {
+    "addr:housenumber": "57",
+    "addr:postcode": "61032",
+    "addr:street": "Via Ugolino de' Pili",
+    "amenity": "cafe",
+    "name": "Caffè delle Scienze",
+    "operator": "Sorcinelli Danila",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02529980415"
+  }
+},
+{
+  "type": "node",
+  "id": 5287983315,
+  "lat": 43.8434236,
+  "lon": 13.0180489,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "28",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Venti settembre",
+    "amenity": "bar",
+    "name": "Bardan",
+    "ref:vatin": "IT02389870417"
+  }
+},
+{
+  "type": "node",
+  "id": 5287983316,
+  "lat": 43.8434262,
+  "lon": 13.0162038,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1",
+    "addr:postcode": "61032",
+    "addr:street": "Via Rainerio",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 1711922",
+    "name": "Vaniglia & Caffè",
+    "old_name": "Il Pasticciere in città",
+    "operator": "Vaniglia & Caffè",
+    "ref:vatin": "IT02592220418"
+  }
+},
+{
+  "type": "node",
+  "id": 5294584748,
+  "lat": 43.8455231,
+  "lon": 13.0170286,
+  "tags": {
+    "addr:housenumber": "40",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nolfi",
+    "amenity": "pub",
+    "name": "Orfanelle",
+    "operator": "Civacuor",
+    "ref:vatin": "IT02611210416"
+  }
+},
+{
+  "type": "node",
+  "id": 5294584749,
+  "lat": 43.8390137,
+  "lon": 13.0100437,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "delivery": "yes",
+    "name": "Il posticino take-away",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5312775956,
+  "lat": 43.8449988,
+  "lon": 13.0151547,
+  "tags": {
+    "amenity": "restaurant",
+    "old_name": "Civico 68"
+  }
+},
+{
+  "type": "node",
+  "id": 5324049990,
+  "lat": 43.8391720,
+  "lon": 13.0270225,
+  "tags": {
+    "addr:housenumber": "41",
+    "addr:street": "Viale Ruggero Mariotti",
+    "amenity": "bar",
+    "brand": "ARCI",
+    "club": "social",
+    "contact:email": "circoloarciartigiana@gmail.com",
+    "contact:instagram": "circoloarciartigiana",
+    "contact:phone": "+39 0721 826169",
+    "live_music": "yes",
+    "name": "Circolo ARCI Artigiana"
+  }
+},
+{
+  "type": "node",
+  "id": 5341541126,
+  "lat": 43.8465348,
+  "lon": 13.0240265,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "39",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Battisti",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:email": "info@botanicfano.it",
+    "contact:facebook": "https://www.facebook.com/botanicfano/",
+    "contact:phone": "+39 0721 835316",
+    "cuisine": "italian",
+    "name": "Botanic",
+    "operator": "Chicco s.a.s.",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02312110410",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5341541127,
+  "lat": 43.8447909,
+  "lon": 13.0157156,
+  "tags": {
+    "addr:place": "Piazza Pier Maria Amiani",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "name": "Memocaffè",
+    "operator": "G & B",
+    "ref:vatin": "IT02456200415"
+  }
+},
+{
+  "type": "node",
+  "id": 5341582506,
+  "lat": 43.8499664,
+  "lon": 13.0166477,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "38",
+    "addr:postcode": "61032",
+    "addr:street": "Via della Marina",
+    "amenity": "bar",
+    "name": "El bar de Lele",
+    "operator": "Moscucci P. & c.",
+    "ref:vatin": "IT02547160412"
+  }
+},
+{
+  "type": "node",
+  "id": 5350938295,
+  "lat": 43.8439112,
+  "lon": 13.0162026,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "126",
+    "addr:postcode": "61032",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "cafe",
+    "contact:phone": "+39 375 5697395",
+    "name": "Pasticceria del Corso",
+    "operator": "Cortese Mauro"
+  }
+},
+{
+  "type": "node",
+  "id": 5353022273,
+  "lat": 43.8447718,
+  "lon": 13.0127773,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Monumento ai Caduti"
+  }
+},
+{
+  "type": "node",
+  "id": 5353307634,
+  "lat": 43.8313793,
+  "lon": 12.9891336,
+  "tags": {
+    "addr:hamlet": "Centinarola",
+    "addr:housenumber": "75",
+    "addr:postcode": "61032",
+    "addr:street": "Via Monfalcone",
+    "amenity": "bar",
+    "name": "Bar 100 Role",
+    "operator": "Santini Eugenio e c.",
+    "ref:vatin": "IT02466940414"
+  }
+},
+{
+  "type": "node",
+  "id": 5438459413,
+  "lat": 43.8449322,
+  "lon": 13.0179526,
+  "tags": {
+    "addr:housenumber": "58",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nolfi",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 806302",
+    "name": "Bar Pasticceria Nolfi",
+    "operator": "Mandolini Lorenzo",
+    "ref:vatin": "IT00954080412"
+  }
+},
+{
+  "type": "node",
+  "id": 5501200411,
+  "lat": 43.8412404,
+  "lon": 13.0119400,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "12",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 804963",
+    "name": "Bar Flaminio",
+    "operator": "Battista Roberto",
+    "ref:vatin": "IT02641730417"
+  }
+},
+{
+  "type": "node",
+  "id": 5600516938,
+  "lat": 43.8407442,
+  "lon": 13.0194568,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "41",
+    "addr:postcode": "61032",
+    "addr:street": "Via Camillo Benso conte di Cavour",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 803674",
+    "name": "Berto Caffè",
+    "operator": "Biagetti Colombo",
+    "ref:vatin": "IT00399160415"
+  }
+},
+{
+  "type": "node",
+  "id": 5628638707,
+  "lat": 43.8385012,
+  "lon": 13.0201600,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "71",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giordano Bruno",
+    "amenity": "cafe",
+    "name": "Il caffè dell'angolo",
+    "old_name": "Asso Caffé"
+  }
+},
+{
+  "type": "node",
+  "id": 5628638708,
+  "lat": 43.8382357,
+  "lon": 13.0213429,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Via Vittorio Veneto",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "name": "Bar Ospedale Fano",
+    "operator": "L'Edicola di Zangoli R. & c. snc",
+    "ref:vatin": "IT03316870405"
+  }
+},
+{
+  "type": "node",
+  "id": 5628638709,
+  "lat": 43.8262207,
+  "lon": 13.0117549,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "44",
+    "addr:postcode": "61032",
+    "addr:street": "Via Sant'Eusebio",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 867020",
+    "name": "Da Poldo",
+    "operator": "Palazzi e Paolini",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02166370417",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5754237094,
+  "lat": 43.8506123,
+  "lon": 13.0156921,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Bar del Faro"
+  }
+},
+{
+  "type": "node",
+  "id": 5754237095,
+  "lat": 43.8504374,
+  "lon": 13.0154192,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ai Caduti del Mare"
+  }
+},
+{
+  "type": "node",
+  "id": 5756576166,
+  "lat": 43.8510616,
+  "lon": 13.0159061,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "260",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/domafano/",
+    "cuisine": "pizza",
+    "name": "Doma",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5756576168,
+  "lat": 43.8508302,
+  "lon": 13.0158269,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "240",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "amenity": "ice_cream",
+    "contact:facebook": "https://www.facebook.com/Carapinafano.it/",
+    "contact:phone": "+39 347 1049968",
+    "contact:website": "http://carapinafano.it/",
+    "name": "Carapina",
+    "opening_hours": "14:00-00:00",
+    "ref:vatin": "IT02660450418"
+  }
+},
+{
+  "type": "node",
+  "id": 5756576169,
+  "lat": 43.8510964,
+  "lon": 13.0160195,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "264",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "amenity": "restaurant",
+    "contact:website": "http://www.dapeppe.it",
+    "cuisine": "italian",
+    "name": "dapeppe",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5762499120,
+  "lat": 43.8676760,
+  "lon": 12.9783927,
+  "tags": {
+    "addr:housenumber": "49",
+    "addr:postcode": "61032",
+    "addr:street": "Località San Biagio",
+    "amenity": "restaurant",
+    "contact:email": "villapiccinetti@gmail.com",
+    "contact:phone": "+39 0721 824606",
+    "contact:website": "https://villapiccinetti.net",
+    "cuisine": "italian",
+    "name": "Villa Piccinetti"
+  }
+},
+{
+  "type": "node",
+  "id": 5830731422,
+  "lat": 43.8256841,
+  "lon": 13.0399199,
+  "tags": {
+    "addr:housenumber": "20",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Enrico Mattei",
+    "amenity": "cafe",
+    "name": "Must Café",
+    "ref:vatin": "IT02662480413"
+  }
+},
+{
+  "type": "node",
+  "id": 5830731425,
+  "lat": 43.8277208,
+  "lon": 13.0413911,
+  "tags": {
+    "addr:housenumber": "19",
+    "addr:street": "Via delle Querce",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 1796590",
+    "name": "Bar Pasticceria Paoletti",
+    "operator": "Paoletti Riccardo",
+    "ref:vatin": "IT02573320419"
+  }
+},
+{
+  "type": "node",
+  "id": 5891295090,
+  "lat": 43.8428961,
+  "lon": 13.0243533,
+  "tags": {
+    "amenity": "cafe",
+    "indoor_seating": "yes",
+    "name": "Bar della stazione",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162271,
+  "lat": 43.8456884,
+  "lon": 13.0135913,
+  "tags": {
+    "addr:housenumber": "22",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "cuisine": "pizza",
+    "entrance": "yes",
+    "name": "Pizzeria del Corso",
+    "operator": "Km Zero S.R.L.",
+    "ref:vatin": "IT02674750423"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162280,
+  "lat": 43.8409644,
+  "lon": 13.0195883,
+  "tags": {
+    "amenity": "ice_cream",
+    "name": "Il gelatiere",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162281,
+  "lat": 43.8440828,
+  "lon": 13.0160943,
+  "tags": {
+    "name": "Museo di Scienze Naturali",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162489,
+  "lat": 43.8405282,
+  "lon": 13.0193293,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "8",
+    "addr:postcode": "61032",
+    "addr:street": "Via Vecchia",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:email": "info@osteriadallapeppa.it",
+    "contact:phone": "+39 0721 823904",
+    "name": "Osteria della Peppa",
+    "website": "https://www.osteriadallapeppa.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162490,
+  "lat": 43.8401746,
+  "lon": 13.0195429,
+  "tags": {
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "Pizzeria Cavour"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162492,
+  "lat": 43.8457601,
+  "lon": 13.0134831,
+  "tags": {
+    "addr:housenumber": "14",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "ice_cream",
+    "check_date": "2024-10-29",
+    "entrance": "yes",
+    "name": "Fiordilatte",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162498,
+  "lat": 43.8434894,
+  "lon": 13.0172896,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "4",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Venti settembre",
+    "amenity": "bar",
+    "name": "Guendalina"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162505,
+  "lat": 43.8425288,
+  "lon": 13.0140603,
+  "tags": {
+    "addr:housenumber": "12",
+    "addr:street": "Largo di Porta Maggiore",
+    "amenity": "restaurant",
+    "contact:phone": "+39 3312295089",
+    "cuisine": "hawaiian;poke;asian",
+    "name": "Waikiki Poké",
+    "old_name": "La Rezdora",
+    "opening_hours": "Mo-Su 12:00-15:00,18:30-22:00",
+    "website": "https://waikikipoke.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162507,
+  "lat": 43.8430331,
+  "lon": 13.0175725,
+  "tags": {
+    "amenity": "ice_cream",
+    "name": "Gelateria Yogurteria XX settembre",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5893162511,
+  "lat": 43.8454903,
+  "lon": 13.0141630,
+  "tags": {
+    "historic": "archaeological_site",
+    "level": "-1",
+    "name": "Anfiteatro Romano"
+  }
+},
+{
+  "type": "node",
+  "id": 5973412134,
+  "lat": 43.8574811,
+  "lon": 12.9975537,
+  "tags": {
+    "addr:housenumber": "70a",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Romagna",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 580652",
+    "cuisine": "pizza",
+    "name": "Pizzeria da Corrado",
+    "ref:vatin": "IT02662840418"
+  }
+},
+{
+  "type": "node",
+  "id": 5973412135,
+  "lat": 43.8478019,
+  "lon": 13.0212933,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "57",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Dante Alighieri",
+    "amenity": "cafe",
+    "name": "Da Romy",
+    "operator": "Caniggia Romina",
+    "ref:vatin": "IT02667210419"
+  }
+},
+{
+  "type": "node",
+  "id": 6003167705,
+  "lat": 43.8357525,
+  "lon": 13.0053020,
+  "tags": {
+    "addr:housenumber": "124d",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "La Pizzeria",
+    "operator": "MEM snc di Xhepa Eraldo & c.",
+    "ref:vatin": "IT02501200410"
+  }
+},
+{
+  "type": "node",
+  "id": 6070983735,
+  "lat": 43.8186095,
+  "lon": 12.9922277,
+  "tags": {
+    "addr:city": "Rosciano",
+    "addr:housenumber": "2",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giusto Cespi",
+    "amenity": "bar",
+    "check_date": "2025-11-02",
+    "name": "Circolo A.R.C.I. Rosciano",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6211799875,
+  "lat": 43.8316787,
+  "lon": 12.9997840,
+  "tags": {
+    "addr:housenumber": "3",
+    "addr:postcode": "61032",
+    "addr:street": "Via Brigata Messina",
+    "amenity": "cafe",
+    "check_date": "2023-07-31",
+    "contact:phone": "+39 0721 865418",
+    "name": "Sciù Sciù Garden",
+    "operator": "Ra.Ma. SRLS",
+    "ref:vatin": "IT02651840411"
+  }
+},
+{
+  "type": "node",
+  "id": 6548472477,
+  "lat": 43.8480243,
+  "lon": 13.0204014,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "39",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cristoforo Colombo",
+    "amenity": "cafe",
+    "contact:phone": "+39 346 9706733",
+    "name": "Via Vai",
+    "ref:vatin": "IT02430760419"
+  }
+},
+{
+  "type": "node",
+  "id": 6557225736,
+  "lat": 43.8451826,
+  "lon": 13.0175375,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1",
+    "addr:street": "Piazza degli Avveduti",
+    "amenity": "ice_cream",
+    "check_date": "2024-10-29",
+    "entrance": "yes",
+    "name": "Maki"
+  }
+},
+{
+  "type": "node",
+  "id": 6595189183,
+  "lat": 43.8450533,
+  "lon": 13.0168103,
+  "tags": {
+    "addr:housenumber": "55",
+    "addr:postcode": "61032",
+    "addr:street": "Via Arco d'Augusto",
+    "amenity": "fast_food",
+    "entrance": "yes",
+    "name": "Un Morso di Romagna"
+  }
+},
+{
+  "type": "node",
+  "id": 6596868980,
+  "lat": 43.8515602,
+  "lon": 13.0099147,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "31",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 823966",
+    "cuisine": "pizza",
+    "name": "Florida",
+    "ref:vatin": "IT01290330412",
+    "takeaway": "yes",
+    "website": "https://www.florida-fano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 6596868981,
+  "lat": 43.8511903,
+  "lon": 13.0113839,
+  "tags": {
+    "amenity": "restaurant",
+    "indoor_seating": "yes",
+    "name": "Mosquito",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6596868982,
+  "lat": 43.8507008,
+  "lon": 13.0138221,
+  "tags": {
+    "addr:housenumber": "9",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 807641",
+    "name": "Al Vecchio Doc",
+    "website": "https://www.alvecchiodoc.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6596868983,
+  "lat": 43.8507545,
+  "lon": 13.0135995,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "86",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "restaurant",
+    "bar": "yes",
+    "check_date": "2024-10-29",
+    "contact:email": "info@labellavitafano.it",
+    "contact:facebook": "https://www.facebook.com/labellavita.fano.1",
+    "contact:phone": "+39 0721 800077",
+    "contact:website": "http://www.labellavitafano.it/",
+    "name": "labellavita"
+  }
+},
+{
+  "type": "node",
+  "id": 6596868984,
+  "lat": 43.8507149,
+  "lon": 13.0134425,
+  "tags": {
+    "amenity": "ice_cream",
+    "check_date": "2024-10-29",
+    "name": "Frullalà"
+  }
+},
+{
+  "type": "node",
+  "id": 6596894487,
+  "lat": 43.8504896,
+  "lon": 13.0127343,
+  "tags": {
+    "addr:housenumber": "98",
+    "addr:street": "Viale Cairoli",
+    "amenity": "fast_food",
+    "name": "Beach Burger"
+  }
+},
+{
+  "type": "node",
+  "id": 6597521486,
+  "lat": 43.8500298,
+  "lon": 13.0134185,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "66",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "Strapizzami"
+  }
+},
+{
+  "type": "node",
+  "id": 6597521490,
+  "lat": 43.8505826,
+  "lon": 13.0124685,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "106",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "bar",
+    "name": "Ziggy Club"
+  }
+},
+{
+  "type": "node",
+  "id": 6606646147,
+  "lat": 43.8502894,
+  "lon": 13.0134089,
+  "tags": {
+    "amenity": "bar",
+    "name": "Joker"
+  }
+},
+{
+  "type": "node",
+  "id": 6606646149,
+  "lat": 43.8504780,
+  "lon": 13.0129865,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "90",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "contact:email": "info@daciarro.it",
+    "contact:phone": "+39 0721806315",
+    "contact:website": "http://www.daciarro.it/",
+    "cuisine": "pizza",
+    "name": "Da Ciarro",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6606646152,
+  "lat": 43.8513378,
+  "lon": 13.0110472,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "27a",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "bar",
+    "contact:phone": "+39 0721 585865",
+    "indoor_seating": "yes",
+    "name": "Bella Vista Taste & Drink",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6606646153,
+  "lat": 43.8507913,
+  "lon": 13.0125855,
+  "tags": {
+    "amenity": "bar",
+    "indoor_seating": "yes",
+    "name": "Lido23",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6612201249,
+  "lat": 43.8507786,
+  "lon": 13.0141962,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1-3",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Simonetti",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/ristorantesambugafano/",
+    "name": "Sambuca",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6621329596,
+  "lat": 43.8501434,
+  "lon": 13.0146387,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1/2",
+    "addr:postcode": "61032",
+    "addr:street": "Piazzale dei Calafati",
+    "amenity": "restaurant",
+    "contact:email": "info@tavernadeipescatori.it",
+    "contact:facebook": "https://www.facebook.com/Felix-Taverna-dei-Pescatori-161063347272711/",
+    "contact:phone": "+39 0721 805364",
+    "contact:website": "http://www.tavernadeipescatori.it/",
+    "name": "Felix - La Taverna Dei Pescatori"
+  }
+},
+{
+  "type": "node",
+  "id": 6633225672,
+  "lat": 43.8111093,
+  "lon": 13.0771556,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Camping Mare Blu"
+  }
+},
+{
+  "type": "node",
+  "id": 6633283800,
+  "lat": 43.8360717,
+  "lon": 13.0292702,
+  "tags": {
+    "addr:housenumber": "2a",
+    "addr:street": "Via San Lazzaro",
+    "alt_name": "Pizzeria Braccino San Lazzaro",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 830526",
+    "contact:website": "https://www.pizzeriebraccino.it/pizzerie/san-lazzaro",
+    "cuisine": "pizza",
+    "name": "Pizzeria Braccino 3",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6633283801,
+  "lat": 43.8336411,
+  "lon": 13.0036946,
+  "tags": {
+    "addr:housenumber": "193",
+    "addr:street": "Via Roma",
+    "alt_name": "Pizzeria Braccino Flaminio",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 867798",
+    "contact:website": "https://www.pizzeriebraccino.it/pizzerie/flaminio",
+    "cuisine": "pizza",
+    "name": "Pizzeria Braccino 2",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6634301470,
+  "lat": 43.8462791,
+  "lon": 13.0234964,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "restaurant",
+    "name": "Acquolina"
+  }
+},
+{
+  "type": "node",
+  "id": 6638706111,
+  "lat": 43.8458152,
+  "lon": 13.0237220,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "16",
+    "addr:postcode": "61032",
+    "addr:street": "Via Cesare Battisti",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 824470",
+    "cuisine": "pizza",
+    "level": "0",
+    "name": "Pizzeria Piazza Italia",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6644116727,
+  "lat": 43.8503745,
+  "lon": 13.0183174,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "46",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/LaRustita/",
+    "contact:phone": "+39 0721 823558",
+    "name": "La Rustita",
+    "payment:debit_cards": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6717332638,
+  "lat": 43.8411817,
+  "lon": 13.0118828,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "18",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "fast_food",
+    "contact:phone": "+39 345 8329798",
+    "cuisine": "pizza",
+    "name": "Pizzeria Giro Pizza",
+    "operator": "Cartagena Vincenzo",
+    "ref:vatin": "IT02616590416",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6727469314,
+  "lat": 43.8469720,
+  "lon": 13.0123964,
+  "tags": {
+    "addr:postcode": "61032",
+    "addr:street": "Via Giacomo Puccini",
+    "amenity": "fast_food",
+    "contact:phone": "+39 320 4825085",
+    "cuisine": "piadina",
+    "name": "Il Kioschetto",
+    "nohousenumber": "yes",
+    "operator": "Gallo Ombretta",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02255810414",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6779396565,
+  "lat": 43.8080152,
+  "lon": 12.9834352,
+  "tags": {
+    "addr:housenumber": "40",
+    "addr:street": "Via Albert Einstein",
+    "amenity": "cafe",
+    "name": "Barbatrukko",
+    "operator": "Signoretti Mattia & c.",
+    "ref:vatin": "IT02471370417"
+  }
+},
+{
+  "type": "node",
+  "id": 6899282627,
+  "lat": 43.8443171,
+  "lon": 13.0171372,
+  "tags": {
+    "addr:housenumber": "4",
+    "addr:place": "Piazza Andrea Costa",
+    "addr:postcode": "61032",
+    "amenity": "fast_food",
+    "check_date": "2024-10-29",
+    "cuisine": "pizza",
+    "name": "Mc Kenzie",
+    "ref:vatin": "IT01349280410"
+  }
+},
+{
+  "type": "node",
+  "id": 6899282629,
+  "lat": 43.8528827,
+  "lon": 13.0075470,
+  "tags": {
+    "addr:postcode": "61032",
+    "addr:street": "Via del Moletto",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "name": "Bagni Arzilla",
+    "nohousenumber": "yes",
+    "ref:vatin": "IT01217960416"
+  }
+},
+{
+  "type": "node",
+  "id": 6919312089,
+  "lat": 43.8436274,
+  "lon": 13.0172780,
+  "tags": {
+    "historic": "district",
+    "name": "Centro storico",
+    "place": "quarter"
+  }
+},
+{
+  "type": "node",
+  "id": 6930038585,
+  "lat": 43.8401963,
+  "lon": 13.0344878,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "name": "trattoria da Nadia"
+  }
+},
+{
+  "type": "node",
+  "id": 7006615873,
+  "lat": 43.8383295,
+  "lon": 13.0125560,
+  "tags": {
+    "amenity": "cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 7027660088,
+  "lat": 43.8521559,
+  "lon": 13.0075302,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "10",
+    "addr:postcode": "61032",
+    "addr:street": "Via del Moletto",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:email": "info@datano.it",
+    "contact:fax": "+39 0721 813448",
+    "contact:phone": "+39 0721 823291",
+    "name": "Da Tano",
+    "website": "http://www.datano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 7178296841,
+  "lat": 43.8449615,
+  "lon": 13.0172979,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza degli Avveduti",
+    "amenity": "cafe",
+    "check_date": "2024-10-29",
+    "name": "Caffè del teatro",
+    "ref:vatin": "IT02800950426"
+  }
+},
+{
+  "type": "node",
+  "id": 7297644558,
+  "lat": 43.8425975,
+  "lon": 13.0185983,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Dino Vampa"
+  }
+},
+{
+  "type": "node",
+  "id": 7316066519,
+  "lat": 43.8262641,
+  "lon": 13.0115658,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "6",
+    "addr:postcode": "61032",
+    "addr:street": "Via Sant'Eusebio",
+    "amenity": "fast_food",
+    "contact:phone": "+39 338 5961245",
+    "cuisine": "pizza",
+    "name": "Pizzeria da Rodo",
+    "old_name": "Mordi e Fuggi"
+  }
+},
+{
+  "type": "node",
+  "id": 7371558474,
+  "lat": 43.8364882,
+  "lon": 13.0305016,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "name": "Muschin"
+  }
+},
+{
+  "type": "node",
+  "id": 7645167385,
+  "lat": 43.8667693,
+  "lon": 12.9823778,
+  "tags": {
+    "amenity": "cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 7678282170,
+  "lat": 43.8435100,
+  "lon": 13.0173147,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Trattoria La Tavernetta"
+  }
+},
+{
+  "type": "node",
+  "id": 7705736190,
+  "lat": 43.8418003,
+  "lon": 13.0191655,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "19",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Antonio Costanzi",
+    "amenity": "bar",
+    "name": "Curcuma Café",
+    "old_name": "Café Costanzi",
+    "operator": "Tù Meh",
+    "ref:vatin": "IT02842560423"
+  }
+},
+{
+  "type": "node",
+  "id": 7855229912,
+  "lat": 43.8435147,
+  "lon": 13.0149487,
+  "tags": {
+    "addr:housenumber": "17",
+    "addr:street": "Via Arco d'Augusto",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 800646",
+    "name": "Caffetteria dell'Arco",
+    "ref:vatin": "IT02030850412"
+  }
+},
+{
+  "type": "node",
+  "id": 7878358391,
+  "lat": 43.8434544,
+  "lon": 13.0204818,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "19",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giuseppe Garibaldi",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "entrance": "yes",
+    "mobile": "+39 342 5054 306; +39 347 9998 357; +39 376 1605 225",
+    "name": "Ristorantino da Pep",
+    "outdoor_seating": "yes",
+    "phone": "+39 0721 826458",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7885182354,
+  "lat": 43.8438271,
+  "lon": 13.0210888,
+  "tags": {
+    "addr:housenumber": "7",
+    "addr:place": "Piazza Fratelli Rosselli",
+    "addr:postcode": "61032",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:email": "bellanapolifano@gmail.com",
+    "contact:phone": "+39 0721 800035",
+    "cuisine": "pizza",
+    "name": "Ristorante Pizzeria Bella Napoli",
+    "website": "https://www.bellanapolifano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 7897408668,
+  "lat": 43.8435751,
+  "lon": 13.0292829,
+  "tags": {
+    "amenity": "cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 7897423188,
+  "lat": 43.8452649,
+  "lon": 13.0263771,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "140",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "La Stiva",
+    "operator": "La Barchetta srl",
+    "ref:vatin": "IT02086070410"
+  }
+},
+{
+  "type": "node",
+  "id": 7897423190,
+  "lat": 43.8440109,
+  "lon": 13.0290355,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "27",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;italian",
+    "name": "Goodies",
+    "opening_hours": "We-Mo 07:00-21:00",
+    "website:menu": "https://linktr.ee/goodies_fano"
+  }
+},
+{
+  "type": "node",
+  "id": 7900676927,
+  "lat": 43.8426584,
+  "lon": 13.0195069,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "63",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giuseppe Garibaldi",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 831405",
+    "name": "Caffè Diana",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7970056274,
+  "lat": 43.8441670,
+  "lon": 13.0126299,
+  "tags": {
+    "addr:housenumber": "24,26",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Bruno Buozzi",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:mobile": "+39 349 0075358",
+    "contact:phone": "+39 0721 825875",
+    "cuisine": "meat;pizza",
+    "name": "La Mandria",
+    "website": "https://www.ristorante-lamandria.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 7973379752,
+  "lat": 43.8479382,
+  "lon": 13.0133405,
+  "tags": {
+    "addr:housenumber": "7;9",
+    "addr:postcode": "61032",
+    "addr:street": "Via Pietro Mascagni",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:email": "info@ristoranteportoverde.it",
+    "contact:phone": "+39 0721 396861",
+    "cuisine": "pizza",
+    "name": "Porto Verde",
+    "website": "https://www.ristoranteportoverde.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 7973379753,
+  "lat": 43.8377984,
+  "lon": 13.0113043,
+  "tags": {
+    "addr:housenumber": "13",
+    "addr:street": "Via dell'Abbazia",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 803749",
+    "name": "Tabaccheria Ricevitoria",
+    "operator": "Rossi Francesco",
+    "ref:vatin": "IT02194360414",
+    "tobacco": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8275180909,
+  "lat": 43.8229387,
+  "lon": 13.0364659,
+  "tags": {
+    "amenity": "cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 8636722732,
+  "lat": 43.8461507,
+  "lon": 13.0135578,
+  "tags": {
+    "addr:housenumber": "5",
+    "addr:postcode": "61032",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "restaurant",
+    "check_date": "2024-10-29",
+    "contact:phone": "+39 0721 803522",
+    "cuisine": "italian;pizza",
+    "name": "Ristorante Pizzeria Orfeo",
+    "ref:vatin": "IT00359820412",
+    "website": "https://www.ristorantepizzeriaorfeo.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 8809984928,
+  "lat": 43.8511903,
+  "lon": 13.0110620,
+  "tags": {
+    "addr:housenumber": "6b",
+    "addr:postcode": "61032",
+    "addr:street": "Piazzale Giovanni Amendola",
+    "amenity": "bar",
+    "name": "My Way",
+    "ref:vatin": "IT02631260417"
+  }
+},
+{
+  "type": "node",
+  "id": 8878287016,
+  "lat": 43.8408663,
+  "lon": 13.0344146,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "20/a",
+    "addr:postcode": "61032",
+    "addr:street": "Via Ruggero Ruggeri",
+    "amenity": "bar",
+    "check_date": "2024-10-29",
+    "name": "Chalet del Sole",
+    "operator": "Luigi Pippa",
+    "ref:vatin": "IT02702130416"
+  }
+},
+{
+  "type": "node",
+  "id": 9124516102,
+  "lat": 43.8609985,
+  "lon": 12.9920344,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "3",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Adriatica Nord",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "name": "Take ristorante Japanese",
+    "phone": "+39 0721801377",
+    "website": "https://www.takefano.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 9245852883,
+  "lat": 43.8420486,
+  "lon": 13.0251857,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:province": "PU",
+    "addr:street": "Via Carlo Pisacane",
+    "amenity": "bar",
+    "changing_table": "limited",
+    "check_date": "2024-10-29",
+    "entrance": "yes",
+    "internet_access": "no",
+    "level": "0",
+    "name": "il caffè del capolinea",
+    "toilets:access": "private",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 9251077183,
+  "lat": 43.8415460,
+  "lon": 13.0125144,
+  "tags": {
+    "denomination": "catholic",
+    "historic": "wayside_shrine",
+    "inscription": "Regina Pacis",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 9368094134,
+  "lat": 43.8402746,
+  "lon": 13.0113649,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "87b",
+    "addr:postcode": "61032",
+    "addr:street": "Via Roma",
+    "amenity": "restaurant",
+    "name": "Taverna del Ghiottone",
+    "website": "https://www.ilghiottonefano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 9406209735,
+  "lat": 43.8407962,
+  "lon": 13.0115178,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "fast_food",
+    "cuisine": "kebab;pizza",
+    "name": "Il Kebabbaro"
+  }
+},
+{
+  "type": "node",
+  "id": 9406209739,
+  "lat": 43.8418996,
+  "lon": 13.0133083,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "name": "A Roma caffè"
+  }
+},
+{
+  "type": "node",
+  "id": 9695593750,
+  "lat": 43.8295590,
+  "lon": 13.0477783,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Metauro"
+  }
+},
+{
+  "type": "node",
+  "id": 9920016811,
+  "lat": 43.8625118,
+  "lon": 12.9897264,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "15b",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Adriatica Nord",
+    "amenity": "cafe",
+    "name": "Bar Tazze Pazze",
+    "ref:vatin": "IT02731040412"
+  }
+},
+{
+  "type": "node",
+  "id": 9951073784,
+  "lat": 43.8138630,
+  "lon": 12.9859740,
+  "tags": {
+    "amenity": "cafe",
+    "check_date": "2025-11-02",
+    "name": "CH4 Bar",
+    "ref:vatin": "IT02755470412"
+  }
+},
+{
+  "type": "node",
+  "id": 10263378490,
+  "lat": 43.8474188,
+  "lon": 13.0228447,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "102",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "fast_food",
+    "contact:email": "info@linsalatiere.it",
+    "contact:phone": "+39 0721 1860431",
+    "cuisine": "poke",
+    "delivery": "yes",
+    "name": "L'Insalatiere",
+    "takeaway": "yes",
+    "website": "https://www.linsalatiere.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 10309196764,
+  "lat": 43.8339062,
+  "lon": 13.0110519,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "9",
+    "addr:postcode": "61032",
+    "addr:street": "Via Guido Guinizzelli",
+    "amenity": "restaurant",
+    "capacity": "80",
+    "cuisine": "regional;italian",
+    "delivery": "no",
+    "name": "Trattoria da Carla",
+    "outdoor_seating": "yes",
+    "smoking": "outside",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10555532742,
+  "lat": 43.8403970,
+  "lon": 13.0145301,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "37",
+    "addr:postcode": "61032",
+    "addr:street": "Via Francesco Palazzi",
+    "amenity": "fast_food",
+    "contact:phone": "+39 392 4206332",
+    "cuisine": "burger",
+    "name": "Deliver EAT",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10729743666,
+  "lat": 43.8445378,
+  "lon": 13.0229948,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "name": "Mikaku Sushi"
+  }
+},
+{
+  "type": "node",
+  "id": 10731753044,
+  "lat": 43.8437099,
+  "lon": 13.0156097,
+  "tags": {
+    "amenity": "fast_food",
+    "cuisine": "piadina",
+    "name": "Piadineria Cittadina"
+  }
+},
+{
+  "type": "node",
+  "id": 10840520417,
+  "lat": 43.8428288,
+  "lon": 13.0240147,
+  "tags": {
+    "addr:housenumber": "45",
+    "addr:postcode": "61032",
+    "addr:street": "Via Felice Cavallotti",
+    "amenity": "fast_food",
+    "check_date": "2024-03-28",
+    "cuisine": "kebab",
+    "indoor_seating": "yes",
+    "name": "alla stazione",
+    "operator": "Elyamine Sirin S.A.S.",
+    "outdoor_seating": "yes",
+    "ref:vatin": "IT02702010410",
+    "toilets": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11012973844,
+  "lat": 43.8491482,
+  "lon": 13.0198808,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "60",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "alt_name": "La Perla di Fano",
+    "amenity": "restaurant",
+    "contact:email": "laperladifano2018@gmail.com",
+    "contact:phone": "+39 0721 825631",
+    "name": "La Perla",
+    "website": "https://laperladifano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 11064482357,
+  "lat": 43.8735184,
+  "lon": 12.9674054,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Adagio Ristorante Agriturismo",
+    "website": "https://adagiolocalespeciale.com"
+  }
+},
+{
+  "type": "node",
+  "id": 11070046510,
+  "lat": 43.8164686,
+  "lon": 13.0738290,
+  "tags": {
+    "addr:hamlet": "Metaurilia",
+    "addr:postcode": "61032",
+    "addr:street": "Via Raffaele Jozzino",
+    "amenity": "cafe",
+    "name": "Boiani Beach",
+    "ref:vatin": "IT01043090412"
+  }
+},
+{
+  "type": "node",
+  "id": 11070046511,
+  "lat": 43.8158962,
+  "lon": 13.0735662,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Boiani Beach"
+  }
+},
+{
+  "type": "node",
+  "id": 11147122626,
+  "lat": 43.8409282,
+  "lon": 13.0173719,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "46",
+    "addr:street": "Viale Antonio Gramsci",
+    "amenity": "cafe",
+    "contact:phone": "+39 366 4421283",
+    "name": "Re Caffè",
+    "ref:vatin": "IT02319130411"
+  }
+},
+{
+  "type": "node",
+  "id": 11175245737,
+  "lat": 43.8308544,
+  "lon": 13.0125992,
+  "tags": {
+    "addr:housenumber": "12",
+    "addr:postcode": "61032",
+    "addr:street": "Via Girolamo Soncino",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "name": "Fantasy Pizza",
+    "opening_hours": "Tu-Su 16:45-22:00",
+    "phone": "+39 329 012 2768"
+  }
+},
+{
+  "type": "node",
+  "id": 11181224111,
+  "lat": 43.8370017,
+  "lon": 13.0083196,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "15",
+    "addr:postcode": "61032",
+    "addr:street": "Via Carlo Cattaneo",
+    "amenity": "restaurant",
+    "contact:instagram": "https://www.instagram.com/empanaderia_fano/",
+    "cuisine": "empanada",
+    "delivery": "yes",
+    "delivery:partner": "deliveroo, glovo",
+    "name": "Empanaderia Gonzales",
+    "opening_hours": "Mo-Su 13:00-15:00, Mo-Su 19:00-22:00",
+    "phone": "+39 3275742228"
+  }
+},
+{
+  "type": "node",
+  "id": 11228652155,
+  "lat": 43.8459761,
+  "lon": 13.0123754,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "71",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Bruno Buozzi",
+    "amenity": "restaurant",
+    "contact:phone": "+39 0721 803838",
+    "cuisine": "italian;pizza",
+    "diet:vegetarian": "yes",
+    "name": "Gioia",
+    "opening_hours": "Mo-Su 19:30-24:00"
+  }
+},
+{
+  "type": "node",
+  "id": 11281224573,
+  "lat": 43.8437742,
+  "lon": 13.0167439,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "35",
+    "addr:postcode": "61032",
+    "addr:street": "Via Montevecchio",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Fanin Bistrot",
+    "opening_hours": "Mo-Fr 18:00-02:00; Su 18:00-03:00; Sa 18:00-01:00",
+    "phone": "+39 3289065717"
+  }
+},
+{
+  "type": "node",
+  "id": 11297499055,
+  "lat": 43.8387329,
+  "lon": 13.0310703,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "134",
+    "addr:postcode": "61032",
+    "addr:street": "Via Carlo Pisacane",
+    "amenity": "pub",
+    "name": "Birreria Arzilla",
+    "old_name": "Zorbas cucina greca Fano"
+  }
+},
+{
+  "type": "node",
+  "id": 11346490079,
+  "lat": 43.8693336,
+  "lon": 12.9787494,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "53",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Nazionale Adriatica Nord",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "indoor_seating": "yes",
+    "name": "Sapori Romani",
+    "outdoor_seating": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11348109311,
+  "lat": 43.8082708,
+  "lon": 13.0802686,
+  "tags": {
+    "amenity": "restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 11557033069,
+  "lat": 43.8428522,
+  "lon": 13.0144532,
+  "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Largo di Porta Maggiore",
+    "amenity": "restaurant",
+    "contact:instagram": "https://www.instagram.com/empanaderia_fano/",
+    "cuisine": "empanada",
+    "name": "Empanaderia Gonzales Arco",
+    "opening_hours": "Tu-Sa 12:00-22:00",
+    "phone": "+39 327 5742228"
+  }
+},
+{
+  "type": "node",
+  "id": 11782561208,
+  "lat": 43.8360772,
+  "lon": 13.0119638,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "85",
+    "addr:postcode": "61032",
+    "addr:street": "Via Quattro Novembre",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "Sushi-Inn",
+    "phone": "+39 0721 621679"
+  }
+},
+{
+  "type": "node",
+  "id": 11789463417,
+  "lat": 43.8377407,
+  "lon": 13.0135284,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "86",
+    "addr:postcode": "61032",
+    "addr:street": "Via Quattro Novembre",
+    "amenity": "restaurant",
+    "cuisine": "italian;regional",
+    "name": "Da Maria",
+    "phone": "+39 0721808962"
+  }
+},
+{
+  "type": "node",
+  "id": 11799696385,
+  "lat": 43.8263516,
+  "lon": 13.0122206,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "48",
+    "addr:postcode": "61032",
+    "addr:street": "Via Sant'Eusebio",
+    "amenity": "ice_cream",
+    "name": "Campi di Fragole",
+    "outdoor_seating": "yes",
+    "phone": "+39 0721863667",
+    "website": "https://www.campidifragole.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 11799696386,
+  "lat": 43.8264200,
+  "lon": 13.0120952,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "2",
+    "addr:postcode": "61032",
+    "addr:street": "Via Sant'Eusebio",
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "name": "Il Primo Fiore",
+    "outdoor_seating": "yes",
+    "phone": "+39 0721 849394",
+    "shop": "pastry"
+  }
+},
+{
+  "type": "node",
+  "id": 11802251537,
+  "lat": 43.8465233,
+  "lon": 13.0129549,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "10",
+    "addr:postcode": "61032",
+    "addr:street": "Via Nazario Sauro",
+    "amenity": "ice_cream",
+    "name": "Puro & Bio",
+    "outdoor_seating": "yes",
+    "phone": "+39 07211651938",
+    "website": "https://www.puroebio.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 11833363611,
+  "lat": 43.8451956,
+  "lon": 13.0161019,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "20",
+    "addr:street": "Via Edmondo De Amicis",
+    "amenity": "cafe",
+    "contact:phone": "+39 0721 820927",
+    "name": "Patty's Bar"
+  }
+},
+{
+  "type": "node",
+  "id": 11837648371,
+  "lat": 43.8294363,
+  "lon": 13.0111728,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "73",
+    "addr:postcode": "61032",
+    "addr:street": "Via Bellandra",
+    "amenity": "restaurant",
+    "cuisine": "italian;regional",
+    "name": "Sta Tranquill \"da Gulla\"",
+    "phone": "+39 3762018722"
+  }
+},
+{
+  "type": "node",
+  "id": 12037438708,
+  "lat": 43.8486293,
+  "lon": 13.0209073,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "80",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "contact:email": "info@dasantin.it",
+    "contact:phone": "+39 0721 805507",
+    "cuisine": "fish",
+    "diet:mediterranean": "yes",
+    "name": "da Santin",
+    "website": "https://www.dasantin.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12128324221,
+  "lat": 43.8311899,
+  "lon": 13.0521381,
+  "tags": {
+    "amenity": "bar",
+    "contact:instagram": "calabiancafano",
+    "live_music": "yes",
+    "name": "Cala Bianca"
+  }
+},
+{
+  "type": "node",
+  "id": 12177137388,
+  "lat": 43.8068417,
+  "lon": 13.0826422,
+  "tags": {
+    "amenity": "restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 12188325701,
+  "lat": 43.8277597,
+  "lon": 13.0562749,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza"
+  }
+},
+{
+  "type": "node",
+  "id": 12329711339,
+  "lat": 43.8432441,
+  "lon": 13.0147728,
+  "tags": {
+    "amenity": "bar",
+    "name": "L'Alchimista"
+  }
+},
+{
+  "type": "node",
+  "id": 12332373979,
+  "lat": 43.8418814,
+  "lon": 13.0190807,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "21",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Antonio Costanzi",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 870728",
+    "cuisine": "pizza",
+    "name": "Trieste Pizza",
+    "opening_hours": "Tu-Su 17:30-22:30",
+    "website": "https://fano.trieste.pizza/"
+  }
+},
+{
+  "type": "node",
+  "id": 12333389630,
+  "lat": 43.8433727,
+  "lon": 13.0180173,
+  "tags": {
+    "amenity": "bar",
+    "name": "Degusteria"
+  }
+},
+{
+  "type": "node",
+  "id": 12333389631,
+  "lat": 43.8433331,
+  "lon": 13.0179915,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Caffè Aurora"
+  }
+},
+{
+  "type": "node",
+  "id": 12335597816,
+  "lat": 43.8320895,
+  "lon": 13.0432017,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "110",
+    "addr:street": "Viale Piceno",
+    "amenity": "fast_food",
+    "cuisine": "pizza",
+    "name": "Fornaccia & Party",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12426310137,
+  "lat": 43.8437286,
+  "lon": 13.0208836,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "5",
+    "addr:postcode": "61032",
+    "addr:street": "Via Giuseppe Garibaldi",
+    "amenity": "fast_food",
+    "contact:email": "gianpiero.occhialini@gmail.com",
+    "contact:phone": "+39 333 2685093",
+    "cuisine": "burger;piadina",
+    "live_music": "yes",
+    "name": "Underground",
+    "website": "https://undergroundfano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12441316084,
+  "lat": 43.8415120,
+  "lon": 13.0184430,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Qui sorgeva la chiesa di S. Maria del Riposo detta, per il suo pavimento maiolicato, \"dei Piattelletti\" (sec. XV). Distrutta nel 1942 dall'ignoranza degli uomini. Perché non se ne perdesse il ricordo l'Archeoclub pose li, 14-XII-1996",
+    "memorial": "plaque",
+    "start_date": "1996-12-14"
+  }
+},
+{
+  "type": "node",
+  "id": 12441370947,
+  "lat": 43.8419845,
+  "lon": 13.0183465,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Le Cesarine"
+  }
+},
+{
+  "type": "node",
+  "id": 12441416606,
+  "lat": 43.8393038,
+  "lon": 13.0170275,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "55",
+    "addr:postcode": "61032",
+    "addr:street": "Via Montegrappa",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 847979",
+    "cuisine": "pizza",
+    "name": "Metropizza",
+    "takeaway": "only"
+  }
+},
+{
+  "type": "node",
+  "id": 12471806340,
+  "lat": 43.8206232,
+  "lon": 13.0521458,
+  "tags": {
+    "addr:housenumber": "42a",
+    "addr:postcode": "61032",
+    "addr:street": "Via della Tombaccia",
+    "amenity": "restaurant",
+    "cuisine": "burger;pizza;regional",
+    "name": "La Pecora Nera"
+  }
+},
+{
+  "type": "node",
+  "id": 12496386103,
+  "lat": 43.8475297,
+  "lon": 13.0226193,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "98a,98b",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "fast_food",
+    "contact:phone": "+39 0721 825680",
+    "cuisine": "italian;mediterranean;pasta",
+    "name": "Gastronomia Donini Maria Cristina"
+  }
+},
+{
+  "type": "node",
+  "id": 12496386105,
+  "lat": 43.8476162,
+  "lon": 13.0225221,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "96a",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "contact:email": "osteriapaniepesci23@gmail.com",
+    "contact:phone": "+39 380 1023276",
+    "cuisine": "seafood",
+    "name": "Osteria Pani e Pesci",
+    "website": "https://osteriapaniepesci.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12514243343,
+  "lat": 43.8458820,
+  "lon": 13.0180349,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:mobile": "+39 334 5634418",
+    "contact:phone": "+39 0721 186 9905",
+    "name": "Taverna Cittadina da Arrotoloni",
+    "opening_hours": "Tu-Fr 19:30-22:30; Sa 12:30-14:30,19:30-22:30; Su 12:30-14:30",
+    "website": "https://www.arrotoloni.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12514243345,
+  "lat": 43.8446510,
+  "lon": 13.0177343,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:phone": "+39 346 5821598",
+    "cuisine": "italian;norwegian",
+    "name": "Lidia's Bistrot"
+  }
+},
+{
+  "type": "node",
+  "id": 12514529133,
+  "lat": 43.8481263,
+  "lon": 13.0223648,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "Mamadera"
+  }
+},
+{
+  "type": "node",
+  "id": 12532173099,
+  "lat": 43.8411486,
+  "lon": 13.0204253,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "20",
+    "addr:postcode": "61032",
+    "addr:street": "Via San Paterniano",
+    "amenity": "pub",
+    "name": "Buddha Pub",
+    "opening_hours": "Mo 20:00-24:00; Tu-Sa 00:00-03:00,20:00-24:00; Su 00:00-03:00"
+  }
+},
+{
+  "type": "node",
+  "id": 12532200001,
+  "lat": 43.8413532,
+  "lon": 13.0200675,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "3",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Jacopo Sansovino",
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "email": "info@passaggilibriecaffe.it",
+    "name": "Passaggi Libri e Caffè",
+    "opening_hours": "Mo 17:30-23:00; Tu-Th 08:30-13:00,17:30-23:00; Fr 08:30-13:00,17:30-00:00; Sa 09:30-13:00,17:30-00:00; Su 09:30-13:00,17:30-23:00",
+    "outdoor_seating": "yes",
+    "phone": "+390721396433",
+    "shop": "books",
+    "website": "https://www.passaggilibriecaffe.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12564044273,
+  "lat": 43.8445898,
+  "lon": 13.0149967,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Bottega del centro",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12673013069,
+  "lat": 43.8468648,
+  "lon": 13.0237951,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "SalePepe"
+  }
+},
+{
+  "type": "node",
+  "id": 12692852866,
+  "lat": 43.8421170,
+  "lon": 13.0188169,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Frumento"
+  }
+},
+{
+  "type": "node",
+  "id": 12692852871,
+  "lat": 43.8416276,
+  "lon": 13.0196316,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Da Raffo al Racanà"
+  }
+},
+{
+  "type": "node",
+  "id": 12692852874,
+  "lat": 43.8442503,
+  "lon": 13.0172517,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1",
+    "addr:place": "Piazza Andrea Costa",
+    "addr:postcode": "61032",
+    "amenity": "bar",
+    "name": "Tandem Club"
+  }
+},
+{
+  "type": "node",
+  "id": 12730679695,
+  "lat": 43.8445847,
+  "lon": 13.0174002,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "27",
+    "addr:postcode": "61032",
+    "addr:street": "Piazza Andrea Costa",
+    "amenity": "fast_food",
+    "cuisine": "fish;italian",
+    "name": "Pescheria Gastronomia"
+  }
+},
+{
+  "type": "node",
+  "id": 12739881883,
+  "lat": 43.8428060,
+  "lon": 13.0185791,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "22",
+    "addr:place": "Piazzetta Donatori di sangue",
+    "addr:postcode": "61032",
+    "amenity": "bar",
+    "name": "Piazzetta Brozzi"
+  }
+},
+{
+  "type": "node",
+  "id": 12768265478,
+  "lat": 43.8423221,
+  "lon": 13.0182058,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "12,14",
+    "addr:postcode": "61032",
+    "addr:street": "Via Bonaccorsi",
+    "amenity": "restaurant",
+    "contact:email": "vecchiafano@gmail.com",
+    "contact:phone": "+39 0721 803493",
+    "name": "La Vecchia Fano",
+    "opening_hours": "Mo 19:30-22:00; Tu-Su 12:00-14:00,19:30-22:00; We off",
+    "website": "https://www.ristorantevecchiafano.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 12772872925,
+  "lat": 43.8415895,
+  "lon": 13.0202704,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Offucina",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12788202902,
+  "lat": 43.8421682,
+  "lon": 13.0164722,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Osteria da Ugo"
+  }
+},
+{
+  "type": "node",
+  "id": 12802283007,
+  "lat": 43.8505991,
+  "lon": 13.0134897,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "86",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Cairoli",
+    "amenity": "ice_cream",
+    "name": "La cremeria del Lido"
+  }
+},
+{
+  "type": "node",
+  "id": 12863269325,
+  "lat": 43.8444718,
+  "lon": 13.0281611,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "19",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "cafe",
+    "cuisine": "pizza;ice_cream",
+    "name": "Splash"
+  }
+},
+{
+  "type": "node",
+  "id": 12959091367,
+  "lat": 43.8446196,
+  "lon": 13.0173485,
+  "tags": {
+    "amenity": "bar",
+    "name": "S.B.M."
+  }
+},
+{
+  "type": "node",
+  "id": 12960308852,
+  "lat": 43.8436766,
+  "lon": 13.0149298,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "5",
+    "addr:postcode": "61032",
+    "addr:street": "Via Rinalducci",
+    "amenity": "cafe",
+    "name": "L'uccellin bel verde",
+    "opening_hours": "Mo-Sa 08:30-12:30,17:30-20:30; We 08:30-12:30; Th,Fr 08:30-12:30,17:30-23:30",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13030922585,
+  "lat": 43.8474542,
+  "lon": 13.0227774,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian;seafood",
+    "name": "Ristorantino Da Giulio"
+  }
+},
+{
+  "type": "node",
+  "id": 13030953040,
+  "lat": 43.8434692,
+  "lon": 13.0180826,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "Dacsì"
+  }
+},
+{
+  "type": "node",
+  "id": 13067665060,
+  "lat": 43.8274548,
+  "lon": 13.0411250,
+  "tags": {
+    "addr:housenumber": "12",
+    "addr:street": "Via delle Querce",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "Pesciutta",
+    "opening_hours": "Mo-Su 12:00-15:00,18:00-22:00; Tu closed",
+    "phone": "+39 0721 1838300",
+    "website": "https://www.pesciutta.it"
+  }
+},
+{
+  "type": "node",
+  "id": 13069908418,
+  "lat": 43.8399045,
+  "lon": 13.0165109,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "21",
+    "addr:postcode": "61032",
+    "addr:street": "Via Marcello Negusanti",
+    "amenity": "cafe",
+    "name": "Raul Cafè"
+  }
+},
+{
+  "type": "node",
+  "id": 13084930291,
+  "lat": 43.8415350,
+  "lon": 13.0194341,
+  "tags": {
+    "addr:housenumber": "54",
+    "addr:street": "Via Camillo Benso conte di Cavour",
+    "amenity": "restaurant",
+    "name": "Atelier 54"
+  }
+},
+{
+  "type": "node",
+  "id": 13084930296,
+  "lat": 43.8443889,
+  "lon": 13.0166279,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "10",
+    "addr:street": "Piazza Andrea Costa",
+    "amenity": "restaurant",
+    "contact:email": "info@ilbelloelabestia.it",
+    "contact:phone": "+39 339 8482595",
+    "cuisine": "fish",
+    "name": "Il Bello e la Bestia",
+    "opening_hours": "Tu-Th 09:00-15:00; Fr,Sa 09:00-15:00,19:30-22:30; Su 19:30-22:30",
+    "outdoor_seating": "yes",
+    "website": "https://ilbelloelabestia.it/"
+  }
+},
+{
+  "type": "node",
+  "id": 13084930298,
+  "lat": 43.8439495,
+  "lon": 13.0171155,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "106",
+    "addr:postcode": "61032",
+    "addr:street": "Via Montevecchio",
+    "amenity": "cafe",
+    "name": "Lo Scatolino"
+  }
+},
+{
+  "type": "node",
+  "id": 13195438125,
+  "lat": 43.8458520,
+  "lon": 13.0135296,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "29",
+    "addr:postcode": "61032",
+    "addr:street": "Corso Giacomo Matteotti",
+    "amenity": "bar",
+    "contact:phone": "+39 334 5456903",
+    "name": "Albulena CocktailPub"
+  }
+},
+{
+  "type": "node",
+  "id": 13423735503,
+  "lat": 43.8473115,
+  "lon": 13.0153750,
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via della Fortezza",
+    "amenity": "bar",
+    "contact:phone": "+39 391 4381947",
+    "name": "Fabbrica Urbana",
+    "nohousenumber": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 148522390,
+  "center": {
+    "lat": 43.8473569,
+    "lon": 13.0150792
+  },
+  "tags": {
+    "castle_type": "fortress",
+    "historic": "castle",
+    "name": "Rocca Malatestiana",
+    "wikidata": "Q29686948"
+  }
+},
+{
+  "type": "way",
+  "id": 243194788,
+  "center": {
+    "lat": 43.8324295,
+    "lon": 13.0492853
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "25",
+    "addr:postcode": "61032",
+    "addr:street": "Via delle Brecce",
+    "amenity": "restaurant",
+    "building": "yes",
+    "building:levels": "2",
+    "cuisine": "italian;pizza;seafood",
+    "name": "Lunà Ristorante Pizzeria",
+    "smoking": "outside",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 351422482,
+  "center": {
+    "lat": 43.8184081,
+    "lon": 12.9933363
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:street": "Via Giusto Cespi",
+    "amenity": "restaurant",
+    "building": "yes",
+    "check_date": "2025-11-02",
+    "cuisine": "sandwich",
+    "name": "Da Panzabella",
+    "nohousenumber": "yes",
+    "phone": "+39 0721 866444"
+  }
+},
+{
+  "type": "way",
+  "id": 432392676,
+  "center": {
+    "lat": 43.8414999,
+    "lon": 13.0329143
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via Ruggero Ruggeri",
+    "amenity": "restaurant",
+    "building": "yes",
+    "check_date": "2026-07-10",
+    "check_date:diet:vegan": "2026-07-10",
+    "check_date:diet:vegetarian": "2026-07-10",
+    "check_date:opening_hours": "2026-05-27",
+    "cuisine": "fish;friture;italian;local;mediterranean;pizza",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "height": "6",
+    "indoor_seating": "yes",
+    "internet_access": "wlan",
+    "name": "Yankee Ristorante-Pizzeria",
+    "opening_hours": "Mo-Su 12:15-14:30, 19:00-12:00",
+    "outdoor_seating": "yes",
+    "phone": "+39 0721 807748",
+    "roof:colour": "white",
+    "roof:height": "6",
+    "roof:material": "metal",
+    "roof:shape": "gabled",
+    "website": "https://ristoranteyankeefano.it/"
+  }
+},
+{
+  "type": "way",
+  "id": 441573358,
+  "center": {
+    "lat": 43.8455873,
+    "lon": 13.0257996
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "134a",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "regional",
+    "height": "6",
+    "name": "Pizzeria Il Giardino Dei Sapori",
+    "roof:shape": "half-hipped",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 462610882,
+  "center": {
+    "lat": 43.8442559,
+    "lon": 13.0179613
+  },
+  "tags": {
+    "castle_type": "stately",
+    "historic": "castle",
+    "name": "Palazzo Malatestiano",
+    "wikidata": "Q29688086",
+    "wikipedia": "it:Palazzo Malatestiano"
+  }
+},
+{
+  "type": "way",
+  "id": 463253709,
+  "center": {
+    "lat": 43.8424553,
+    "lon": 13.0139199
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "name": "Porta Maggiore",
+    "wikidata": "Q104478054"
+  }
+},
+{
+  "type": "way",
+  "id": 463253711,
+  "center": {
+    "lat": 43.8430788,
+    "lon": 13.0144995
+  },
+  "tags": {
+    "building": "yes",
+    "height": "8",
+    "historic": "city_gate",
+    "name": "Arco d'Augusto",
+    "name:en": "Arch of Augustus",
+    "name:it": "Arco d'Augusto",
+    "wikidata": "Q1892195",
+    "wikipedia": "it:Arco d'Augusto (Fano)"
+  }
+},
+{
+  "type": "way",
+  "id": 464343295,
+  "center": {
+    "lat": 43.8432339,
+    "lon": 13.0193380
+  },
+  "tags": {
+    "abandoned:amenity": "place_of_worship",
+    "denomination": "roman_catholic",
+    "historic": "church",
+    "name": "Chiesa di San Francesco",
+    "religion": "christian",
+    "ruined:building": "church",
+    "wikidata": "Q29683576",
+    "wikipedia": "it:Chiesa di San Francesco (Fano)"
+  }
+},
+{
+  "type": "way",
+  "id": 464343297,
+  "center": {
+    "lat": 43.8434533,
+    "lon": 13.0196431
+  },
+  "tags": {
+    "historic": "monastery",
+    "name": "Convento di San Francesco"
+  }
+},
+{
+  "type": "way",
+  "id": 547732514,
+  "center": {
+    "lat": 43.8457664,
+    "lon": 13.0140575
+  },
+  "tags": {
+    "barrier": "colonnade",
+    "description:it": "Colonnato del Chiostro di Santa Teresa",
+    "historic": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 548344819,
+  "center": {
+    "lat": 43.8430130,
+    "lon": 13.0300040
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "la tressa"
+  }
+},
+{
+  "type": "way",
+  "id": 609526585,
+  "center": {
+    "lat": 43.8498129,
+    "lon": 13.0185014
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "52",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Adriatico",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "brand": "PesceAzzurro",
+    "building": "commercial",
+    "building:levels": "1",
+    "contact:phone": "+39 0721 803165",
+    "contact:website": "http://www.pesceazzurro.com/ristorante-fano/",
+    "cuisine": "seafood",
+    "disabled": "yes",
+    "drive_through": "yes",
+    "height": "5",
+    "name": "Pesce Azzurro",
+    "opening_hours": "Tu-Su 12:00-14:00,19:30-22:00",
+    "roof:shape": "flat",
+    "self_service": "yes",
+    "toilets": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 609700964,
+  "center": {
+    "lat": 43.8433526,
+    "lon": 13.0298390
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "addr:street": "Via Ruggero Ruggeri",
+    "amenity": "restaurant",
+    "building": "commercial",
+    "contact:email": "info@ristorantealmare.it",
+    "contact:facebook": "https://www.facebook.com/almareristorante/",
+    "contact:phone": "+39 0721 969727",
+    "contact:website": "https://www.ristorantealmare.it/",
+    "height": "5",
+    "indoor_seating": "yes",
+    "name": "Ristorante Almare",
+    "outdoor_seating": "yes",
+    "roof:colour": "grey",
+    "roof:shape": "flat"
+  }
+},
+{
+  "type": "way",
+  "id": 692492448,
+  "center": {
+    "lat": 43.8500622,
+    "lon": 13.0173701
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "3",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Dante Alighieri",
+    "amenity": "restaurant",
+    "building": "commercial",
+    "cuisine": "sushi",
+    "name": "Sushi Corner",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 706071976,
+  "center": {
+    "lat": 43.8463381,
+    "lon": 13.0238890
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "89",
+    "addr:postcode": "61032",
+    "addr:street": "Viale Dante Alighieri",
+    "amenity": "restaurant",
+    "building": "commercial",
+    "building:levels": "1",
+    "check_date": "2024-10-29",
+    "name": "Cile's Ristorante Bistrot",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 720664800,
+  "center": {
+    "lat": 43.8457664,
+    "lon": 13.0140575
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "pedestrian",
+    "historic": "cloister",
+    "name": "Chiostro di Santa Teresa"
+  }
+},
+{
+  "type": "way",
+  "id": 729148646,
+  "center": {
+    "lat": 43.8438623,
+    "lon": 13.0176641
+  },
+  "tags": {
+    "alt_name": "Palazzo della Ragione",
+    "building": "yes",
+    "name": "Palazzo del Podestà",
+    "tourism": "attraction",
+    "wikidata": "Q54087522"
+  }
+},
+{
+  "type": "way",
+  "id": 751661017,
+  "center": {
+    "lat": 43.8301582,
+    "lon": 13.0529591
+  },
+  "tags": {
+    "amenity": "bar",
+    "building": "yes",
+    "outdoor_seating": "yes",
+    "roof:shape": "hipped"
+  }
+},
+{
+  "type": "way",
+  "id": 751661038,
+  "center": {
+    "lat": 43.8511555,
+    "lon": 13.0141156
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751661039,
+  "center": {
+    "lat": 43.8513289,
+    "lon": 13.0121013
+  },
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751676746,
+  "center": {
+    "lat": 43.8465424,
+    "lon": 13.0253516
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "building": "yes",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751676776,
+  "center": {
+    "lat": 43.8519777,
+    "lon": 13.0102648
+  },
+  "tags": {
+    "amenity": "bar",
+    "building": "yes",
+    "name": "Il Barettino",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751756559,
+  "center": {
+    "lat": 43.8471676,
+    "lon": 13.0237799
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751756601,
+  "center": {
+    "lat": 43.8369896,
+    "lon": 13.0381345
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751756637,
+  "center": {
+    "lat": 43.8333810,
+    "lon": 13.0483097
+  },
+  "tags": {
+    "amenity": "bar",
+    "building": "yes",
+    "height": "3",
+    "outdoor_seating": "yes",
+    "roof:shape": "hipped"
+  }
+},
+{
+  "type": "way",
+  "id": 751756641,
+  "center": {
+    "lat": 43.8325623,
+    "lon": 13.0470712
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751756666,
+  "center": {
+    "lat": 43.8455079,
+    "lon": 13.0270072
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:postcode": "61032",
+    "amenity": "cafe",
+    "building": "yes",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 751762429,
+  "center": {
+    "lat": 43.8527837,
+    "lon": 12.9915219
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "roof:colour": "red",
+    "roof:shape": "hipped"
+  }
+},
+{
+  "type": "way",
+  "id": 753089548,
+  "center": {
+    "lat": 43.8560948,
+    "lon": 13.0003763
+  },
+  "tags": {
+    "amenity": "bar",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1270064050,
+  "center": {
+    "lat": 43.8260940,
+    "lon": 12.9902180
+  },
+  "tags": {
+    "addr:city": "Fano",
+    "addr:housenumber": "1",
+    "addr:postcode": "61032",
+    "addr:street": "Strada Comunale di Monte Giove",
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "regional;italian",
+    "name": "Castello di Montegiove",
+    "phone": "+39 0721 864123",
+    "tourism": "hotel",
+    "website": "https://www.castellomontegiove.it/"
+  }
+},
+{
+  "type": "way",
+  "id": 1491118464,
+  "center": {
+    "lat": 43.8446249,
+    "lon": 13.0171309
+  },
+  "tags": {
+    "access": "no",
+    "archaeological_site": "church",
+    "architect": "Marco Vitruvio Pollione",
+    "description": "È la Basilica descritta da Vitruvio nel “De Architectura” con pianta rettangolare e colonnato perimetrale: otto colonne sui lati lunghi e quattro sui lati brevi.",
+    "historic": "archaeological_site",
+    "historic:civilization": "ancient_roman",
+    "historic:period": "principate",
+    "name": "Basilica Vitruviana",
+    "name:he": "בזיליקה של ויטרוביוס",
+    "name:it": "Basilica Vitruviana",
+    "ruins": "temple",
+    "source": "https://cultura.gov.it/comunicato/28580",
+    "start_date": "~C1 BC"
+  }
+},
+{
+  "type": "relation",
+  "id": 6841625,
+  "center": {
+    "lat": 43.8425923,
+    "lon": 13.0234986
+  },
+  "tags": {
+    "building": "yes",
+    "castle_type": "castrum",
+    "historic": "castle",
+    "name": "Bastione del Sangallo",
+    "roof:colour": "maroon",
+    "type": "multipolygon",
+    "wikidata": "Q29689560"
+  }
+},
+{
+  "type": "relation",
+  "id": 7167628,
+  "center": {
+    "lat": 43.8450646,
+    "lon": 13.0161778
+  },
+  "tags": {
+    "building": "monastery",
+    "historic": "monastery",
+    "monastery:type": "convent",
+    "name": "Convento di San Domenico",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 8443519,
+  "center": {
+    "lat": 43.8427229,
+    "lon": 13.0136766
+  },
+  "tags": {
+    "castle_type": "fortress",
+    "historic": "castle",
+    "name": "Bastione del Nuti",
+    "type": "multipolygon",
+    "wikidata": "Q29689664"
+  }
+}
+
+  ]
+}

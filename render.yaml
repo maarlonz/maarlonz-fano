@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: maarlonz-fano
+    runtime: node
+    plan: free
+    buildCommand: "true"
+    startCommand: node server.js
+    healthCheckPath: /
+    autoDeploy: true

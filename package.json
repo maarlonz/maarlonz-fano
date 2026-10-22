@@ -1,0 +1,13 @@
+{
+  "name": "maarlonz-fano",
+  "version": "1.0.0",
+  "description": "Mappa di Fano con locali, aperitivi e luoghi storici, chat e incontri con solo nickname",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

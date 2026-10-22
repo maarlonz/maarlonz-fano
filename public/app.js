@@ -109,7 +109,8 @@ function initMap() {
   map = L.map('map', { zoomControl: false, attributionControl: true, minZoom: 12, maxZoom: 19, zoomSnap: .5 })
     .setView(CENTER, isMobile() ? 15 : 16);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
-  L.tileLayer(TILE_URL, { maxZoom: 19,
+  // OpenStreetMap serve tile vuote se la richiesta non dice da quale sito arriva
+  L.tileLayer(TILE_URL, { maxZoom: 19, referrerPolicy: 'strict-origin-when-cross-origin',
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
   cluster = L.markerClusterGroup({
     showCoverageOnHover: false, maxClusterRadius: 46, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 18,

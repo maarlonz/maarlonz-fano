@@ -220,7 +220,7 @@ http.createServer(async (req, res) => {
   fs.readFile(p, (err, data) => {
     if (err) { res.writeHead(404); return res.end('404'); }
     res.writeHead(200, { 'Content-Type': MIME[path.extname(p)] || 'application/octet-stream', 'Cache-Control': 'no-cache',
-      'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin', 'Permissions-Policy': 'geolocation=(self)' });
+      'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Permissions-Policy': 'geolocation=(self)' });
     res.end(data);
   });
 }).listen(PORT, '0.0.0.0', () => console.log(`Fano Insieme su http://localhost:${PORT}`));

@@ -105,7 +105,9 @@ const routes = {
       if (hits.length >= 8) return json(res, 429, { error: 'Troppe registrazioni da questa rete, riprova più tardi.' });
       hits.push(now); joinHits.set(ip, hits);
     }
-    const u = ex || { nick, token: crypto.randomBytes(18).toString('hex'), color: Math.floor(Math.random() * 360), since: Date.now() };
+    // Dopo un riavvio (dati azzerati) il dispositivo ritrova il suo nickname riusando la chiave che ha salvato.
+    const keep = typeof b.token === 'string' && /^[0-9a-f]{36}$/.test(b.token) && !byToken(b.token) ? b.token : null;
+    const u = ex || { nick, token: keep || crypto.randomBytes(18).toString('hex'), color: Math.floor(Math.random() * 360), since: Date.now() };
     if (b.emoji) u.emoji = clean(b.emoji, 4);
     const isNew = !ex;
     db.users[key] = u; save();

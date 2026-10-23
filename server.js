@@ -10,7 +10,9 @@ const DB_FILE = path.join(__dirname, 'data', 'db.json');
 const PLACES_FILE = path.join(__dirname, 'data', 'places.json');
 
 // Archivio: Upstash Redis se configurato (dati permanenti anche quando Render riavvia), altrimenti il file locale.
-const KV_URL = process.env.UPSTASH_REDIS_REST_URL, KV_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+// (tolti spazi e virgolette: copiando dal riquadro ".env" di Upstash finiscono spesso nel valore)
+const envClean = v => String(v || '').trim().replace(/^["']+|["']+$/g, '').trim();
+const KV_URL = envClean(process.env.UPSTASH_REDIS_REST_URL), KV_TOKEN = envClean(process.env.UPSTASH_REDIS_REST_TOKEN);
 const KV_KEY = 'fano:db';
 async function kv(cmd) {
   const r = await fetch(KV_URL, { method: 'POST', body: JSON.stringify(cmd),

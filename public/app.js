@@ -29,6 +29,7 @@ const S = {
   query: '', userPos: null, selected: null,
   piazza: [], dms: [], meetups: [], online: [], users: new Map(),
   conv: 'piazza', unread: {}, tab: 'explore', attach: null,
+  blocked: new Set(),
   shareLoc: !!store.get('fano.shareLoc'), watchId: null, lastSent: null,
 };
 
@@ -90,8 +91,17 @@ function enterApp() {
   setTimeout(() => { map.invalidateSize(); moveInk(); }, 60);
 }
 
-function setAvatar(el, u) { el.textContent = u.emoji || '🙂'; el.style.setProperty('--h', u.color ?? 20); }
-const avatarHTML = u => `<span class="avatar" style="--h:${+u.color || 20}">${esc(u.emoji || '🙂')}</span>`;
+// Avatar: la foto profilo se c'è (av = versione), altrimenti l'emoji scelta all'ingresso.
+function avatarInner(u) {
+  const nick = u.nick || u.from, av = S.users.get(nick)?.av ?? u.av;
+  return av ? `<img src="/api/avatar?nick=${encodeURIComponent(nick)}&v=${+av}" alt="" loading="lazy" decoding="async">` : esc(u.emoji || '🙂');
+}
+function setAvatar(el, u) {
+  el.innerHTML = avatarInner(u); el.classList.toggle('img', el.innerHTML.startsWith('<img'));
+  el.style.setProperty('--h', u.color ?? 20);
+}
+const avatarHTML = u => { const inner = avatarInner(u); return `<span class="avatar${inner.startsWith('<img') ? ' img' : ''}" style="--h:${+u.color || 20}">${inner}</span>`; };
+const isBlocked = n => S.blocked.has(n);
 
 /* ================= MAPPA ================= */
 let map, cluster, featLayer, meetLayer, peopleLayer, meMarker, accCircle, areaCircle;
@@ -295,7 +305,7 @@ function switchTab(t) {
   moveInk();
   if (t === 'chat') { S.unread[S.conv] = 0; renderConvs(); renderMessages(); updateBadges(); }
   if (t === 'meet') renderMeetups();
-  if (t === 'people') renderPeople();
+  if (t === 'people') { S.peopleShown = false; renderPeople(); }
   if (isMobile() && sheet !== 'full') setSheet(t === 'explore' ? 'half' : 'full');
 }
 function moveInk() {
@@ -353,8 +363,11 @@ const HANDLERS = {
   init(d) {
     S.piazza = d.piazza; S.dms = d.dms; S.meetups = d.meetups; S.online = d.online;
     S.users = new Map(d.users.map(u => [u.nick, u]));
+    S.blocked = new Set(d.blocked || []);
+    setAvatar($('#meAvatar'), S.users.get(S.me.nick) || S.me);
     renderPeople(); renderPeoplePins(); renderConvs(); renderMessages(); renderMeetups(); renderMeetPins(); updateBadges();
   },
+  blocks(d) { S.blocked = new Set(d.blocked); renderPeople(); renderPeoplePins(); renderConvs(); renderMessages(); },
   msg(m) {
     S.piazza.push(m); S.users.set(m.from, { ...S.users.get(m.from), nick: m.from, color: m.color, emoji: m.emoji });
     incoming('piazza', m);
@@ -370,11 +383,16 @@ const HANDLERS = {
     else { S.meetups.push(m); if (m.by !== S.me.nick && S.tab !== 'meet') { S.newMeets = (S.newMeets || 0) + 1; } }
     renderMeetups(); renderMeetPins(); updateBadges();
   },
-  user(u) { S.users.set(u.nick, { ...S.users.get(u.nick), ...u }); renderPeople(); renderPeoplePins(); },
+  user(u) {
+    S.users.set(u.nick, { ...S.users.get(u.nick), ...u });
+    if (u.nick === S.me.nick) { setAvatar($('#meAvatar'), u); if ($('#accountDialog').open) setAvatar($('#accAvatar'), u); }
+    renderPeople(); renderPeoplePins(); renderConvs();
+    if (S.tab === 'chat') renderMessages(true);
+  },
   presence(d) {
     S.online = d.online;
     if (d.left) S.users.set(d.left.nick, { ...S.users.get(d.left.nick), ...d.left });
-    if (d.joined) { S.users.set(d.joined.nick, d.joined); if (d.joined.nick !== S.me.nick) toast(d.joined, 'è appena entrato in piazza 👋', () => openConv(d.joined.nick)); }
+    if (d.joined) { S.users.set(d.joined.nick, d.joined); if (d.joined.nick !== S.me.nick && !isBlocked(d.joined.nick)) toast(d.joined, 'è appena entrato in piazza 👋', () => openConv(d.joined.nick)); }
     renderPeople(); renderPeoplePins(); renderConvs();
   },
   // un utente ha eliminato il suo account: sparisce da liste, chat e incontri
@@ -435,7 +453,7 @@ async function startPoll(gen) {
 
 function incoming(conv, m) {
   const viewing = S.tab === 'chat' && S.conv === conv && (!isMobile() || sheet !== 'peek');
-  if (m.from !== S.me.nick && !viewing) {
+  if (m.from !== S.me.nick && !viewing && !isBlocked(m.from)) {
     S.unread[conv] = (S.unread[conv] || 0) + 1;
     toast({ nick: m.from, color: m.color, emoji: m.emoji }, (conv === 'piazza' ? '' : '🔒 ') + m.text, () => openConv(conv));
   }
@@ -444,11 +462,11 @@ function incoming(conv, m) {
 }
 
 /* ================= CHAT ================= */
-function convMessages(c) { return c === 'piazza' ? S.piazza : S.dms.filter(m => (m.from === c && m.to === S.me.nick) || (m.to === c && m.from === S.me.nick)); }
+function convMessages(c) { return c === 'piazza' ? S.piazza.filter(m => !isBlocked(m.from)) : S.dms.filter(m => (m.from === c && m.to === S.me.nick) || (m.to === c && m.from === S.me.nick)); }
 function renderConvs() {
-  const partners = [...new Set(S.dms.map(m => m.from === S.me.nick ? m.to : m.from))]
+  const partners = [...new Set(S.dms.map(m => m.from === S.me.nick ? m.to : m.from))].filter(n => !isBlocked(n))
     .map(n => ({ n, last: Math.max(...convMessages(n).map(m => m.at)) })).sort((a, b) => b.last - a.last).map(x => x.n);
-  const others = S.online.filter(n => n !== S.me.nick && !partners.includes(n));
+  const others = S.online.filter(n => n !== S.me.nick && !partners.includes(n) && !isBlocked(n));
   const u = n => S.users.get(n) || { nick: n };
   const unread = c => S.unread[c] ? `<span class="unread">${S.unread[c]}</span>` : '';
   $('#convs').innerHTML =
@@ -458,7 +476,6 @@ function renderConvs() {
 $('#convs').addEventListener('click', e => { const b = e.target.closest('.conv'); if (b) openConv(b.dataset.c); });
 function openConv(c) {
   S.conv = c; S.unread[c] = 0;
-  $('#msgInput').placeholder = c === 'piazza' ? 'Scrivi in piazza…' : `Messaggio privato a ${c}…`;
   if (S.tab !== 'chat') switchTab('chat'); else { renderConvs(); renderMessages(); updateBadges(); }
   if (isMobile()) setSheet('full');
 }
@@ -470,12 +487,39 @@ const fmtDay = t => {
   if (d.toDateString() === y.toDateString()) return 'Ieri';
   return d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
 };
+// In una chat privata: chi è, se è online e il pulsante per bloccarlo. Se è bloccato la scrittura si blocca.
+function renderConvBar() {
+  const bar = $('#convBar'), c = S.conv, priv = c !== 'piazza';
+  bar.hidden = !priv;
+  const blocked = priv && isBlocked(c);
+  $('#composer').classList.toggle('locked', blocked);
+  $('#msgInput').disabled = blocked;
+  $('#msgInput').placeholder = blocked ? `Hai bloccato ${c}` : priv ? `Messaggio privato a ${c}…` : 'Scrivi in piazza…';
+  if (!priv) return;
+  const u = S.users.get(c) || { nick: c };
+  bar.innerHTML = `${avatarHTML(u)}<div><b>${esc(c)}</b><small>${S.online.includes(c) ? '🟢 Online ora' : u.seen ? `Visto ${ago(u.seen)}` : 'Chat privata'}</small></div>
+    <button type="button" class="block-btn ${blocked ? 'off' : ''}" data-block="${esc(c)}">${blocked ? 'Sblocca' : '🚫 Blocca'}</button>`;
+}
+$('#convBar').addEventListener('click', e => { const b = e.target.closest('[data-block]'); if (b) toggleBlock(b.dataset.block); });
+
+async function toggleBlock(nick) {
+  const on = !isBlocked(nick);
+  if (on && !confirm(`Bloccare ${nick}?\n\nNon vedrai più i suoi messaggi in Piazza, non potrete scrivervi in privato e non riceverai sue notifiche. Puoi sbloccarlo quando vuoi dalla scheda Persone.`)) return;
+  try {
+    const r = await api('/api/block', { nick, on });
+    HANDLERS.blocks(r);
+    toast({ nick: on ? 'Utente bloccato' : 'Utente sbloccato', emoji: on ? '🚫' : '✅' }, on ? `${nick} non può più scriverti.` : `Puoi di nuovo scrivere con ${nick}.`);
+  } catch (err) { toast({ nick: 'Fano Insieme', emoji: '⚠️' }, err.message); }
+}
+
 function renderMessages(scrollIfNear) {
+  renderConvBar();
   const box = $('#messages');
   const near = box.scrollHeight - box.scrollTop - box.clientHeight < 120;
   const msgs = convMessages(S.conv).slice(-200);
   let html = '', prev = null, day = '';
   if (!msgs.length) html = `<div class="empty"><b>${S.conv === 'piazza' ? '👋' : '✉️'}</b>${S.conv === 'piazza' ? 'La piazza è tranquilla.<br>Rompi il ghiaccio e saluta tutti!' : `Inizia una conversazione con ${esc(S.conv)}.`}</div>`;
+  if (S.conv !== 'piazza' && isBlocked(S.conv)) html = `<div class="blocked-note">🚫 Hai bloccato ${esc(S.conv)}. Non potete scrivervi finché non lo sblocchi.</div>`;
   for (const m of msgs) {
     const dd = fmtDay(m.at); if (dd !== day) { html += `<div class="day-sep">${dd}</div>`; day = dd; prev = null; }
     const mine = m.from === S.me.nick, cont = prev && prev.from === m.from && m.at - prev.at < 180e3 && !m.meetup;
@@ -649,7 +693,7 @@ function renderPeoplePins() {
   if (!peopleLayer) return;
   peopleLayer.clearLayers();
   for (const u of S.users.values()) {
-    if (!u.loc || u.nick === S.me.nick || !S.online.includes(u.nick)) continue;
+    if (!u.loc || u.nick === S.me.nick || !S.online.includes(u.nick) || isBlocked(u.nick)) continue;
     L.marker([u.loc.lat, u.loc.lng], { zIndexOffset: 1500, icon: L.divIcon({ className: 'person-pin', iconSize: [38, 38], iconAnchor: [19, 19], html: avatarHTML(u) }) })
       .bindTooltip(`${esc(u.nick)} · online`, { className: 'tip', direction: 'top', offset: [0, -20] })
       .on('click', () => openConv(u.nick)).addTo(peopleLayer);
@@ -668,7 +712,8 @@ function ago(t) {
 }
 function renderPeople() {
   const q = $('#peopleSearch').value.trim().toLowerCase();
-  const all = [...S.users.values()].filter(u => !q || u.nick.toLowerCase().includes(q));
+  const found = [...S.users.values()].filter(u => !q || u.nick.toLowerCase().includes(q));
+  const all = found.filter(u => !isBlocked(u.nick)), blockedList = found.filter(u => isBlocked(u.nick));
   const on = all.filter(u => S.online.includes(u.nick))
     .sort((a, b) => (b.nick === S.me.nick) - (a.nick === S.me.nick) || a.nick.localeCompare(b.nick));
   const off = all.filter(u => !S.online.includes(u.nick)).sort((a, b) => (b.seen || b.since || 0) - (a.seen || a.since || 0));
@@ -680,19 +725,29 @@ function renderPeople() {
     return `<div class="person ${isOn ? 'on' : 'off'}" data-nick="${esc(u.nick)}" style="--i:${i++}">
       <div class="av-wrap">${avatarHTML(u)}<i class="status"></i></div>
       <div><h4>${esc(u.nick)}${me ? ' <small>(tu)</small>' : ''}</h4><p>${status}</p></div>
-      ${me ? '' : '<button class="write" type="button">Scrivi</button>'}
+      ${me ? '' : `<button class="write" type="button">Scrivi</button><button class="block-icon" type="button" data-block="${esc(u.nick)}" title="Blocca ${esc(u.nick)}" aria-label="Blocca ${esc(u.nick)}">🚫</button>`}
     </div>`;
   };
-  $('#peopleList').innerHTML = !all.length ? '<div class="empty"><b>🔎</b>Nessuna persona trovata.</div>' :
+  const bRow = u => `<div class="person off blocked" style="--i:${i++}">
+      <div class="av-wrap">${avatarHTML(u)}</div>
+      <div><h4>${esc(u.nick)}</h4><p>Bloccato da te</p></div>
+      <button class="write" type="button" data-block="${esc(u.nick)}">Sblocca</button>
+    </div>`;
+  $('#peopleList').innerHTML = !found.length ? '<div class="empty"><b>🔎</b>Nessuna persona trovata.</div>' :
     `<div class="people-head on"><i></i>Online · ${on.length}</div>` +
     (on.map(u => row(u, true)).join('') || '<div class="empty" style="padding:14px">Nessuno online</div>') +
     `<div class="people-head"><i></i>Offline · ${off.length}</div>` +
-    (off.map(u => row(u, false)).join('') || '<div class="empty" style="padding:14px">Tutti sono online! 🎉</div>');
+    (off.map(u => row(u, false)).join('') || '<div class="empty" style="padding:14px">Tutti sono online! 🎉</div>') +
+    (blockedList.length ? `<div class="people-head"><i></i>Bloccati · ${blockedList.length}</div>` + blockedList.map(bRow).join('') : '');
   const b = $('#peopleBadge'); b.textContent = S.online.length; b.classList.toggle('show', S.online.length > 0);
+  // l'animazione d'entrata solo all'apertura della scheda, non a ogni aggiornamento (altrimenti la lista lampeggia)
+  $('#peopleList').classList.toggle('calm', !!S.peopleShown);
+  if (S.tab === 'people') S.peopleShown = true;
 }
 $('#peopleSearch').addEventListener('input', renderPeople);
 $('#peopleList').addEventListener('click', e => {
-  const p = e.target.closest('.person'); if (p && p.dataset.nick !== S.me.nick) openConv(p.dataset.nick);
+  const b = e.target.closest('[data-block]'); if (b) return toggleBlock(b.dataset.block);
+  const p = e.target.closest('.person'); if (p && p.dataset.nick && p.dataset.nick !== S.me.nick) openConv(p.dataset.nick);
 });
 setInterval(() => { if (S.tab === 'people') renderPeople(); }, 60e3);
 
@@ -894,8 +949,47 @@ $('#locateBtn').addEventListener('click', async () => {
 });
 
 $('#meChip').addEventListener('click', () => {
-  $('#accNick').textContent = S.me.nick; setAvatar($('#accAvatar'), S.me);
+  const me = S.users.get(S.me.nick) || S.me;
+  $('#accNick').textContent = S.me.nick; setAvatar($('#accAvatar'), me);
+  $('#accPhotoDel').hidden = !me.av; accMsg('');
   $('#accountDialog').showModal();
+});
+
+// Foto profilo: ritaglio quadrato al centro, 192×192, JPEG compresso (circa 10-25 KB) prima dell'invio.
+async function photoToDataURL(file) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((ok, ko) => { const i = new Image(); i.onload = () => ok(i); i.onerror = ko; i.src = url; });
+    const side = Math.min(img.naturalWidth, img.naturalHeight), N = 192;
+    const c = document.createElement('canvas'); c.width = c.height = N;
+    const g = c.getContext('2d');
+    g.fillStyle = '#fff'; g.fillRect(0, 0, N, N);
+    g.drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, N, N);
+    for (const q of [.85, .7, .55]) { const d = c.toDataURL('image/jpeg', q); if (d.length < 70000) return d; }
+    throw new Error('Immagine troppo pesante');
+  } finally { URL.revokeObjectURL(url); }
+}
+// (i messaggi vanno dentro la finestra: i toast resterebbero nascosti sotto di essa)
+const accMsg = t => { $('#accMsg').textContent = t; };
+async function setPhoto(image) {
+  const btn = $('#accPhotoBtn'); btn.classList.add('busy'); accMsg('Caricamento…');
+  try {
+    const r = await api('/api/avatar', { image });
+    HANDLERS.user({ ...(S.users.get(S.me.nick) || S.me), av: r.av });
+    $('#accPhotoDel').hidden = !r.av;
+    accMsg(image ? 'Foto aggiornata ✓' : 'Foto rimossa');
+  } catch (err) { accMsg(err.message || 'Non riesco a caricare la foto'); }
+  btn.classList.remove('busy');
+}
+$('#accPhotoBtn').addEventListener('click', () => $('#accPhotoInput').click());
+$('#accPhotoPick').addEventListener('click', () => $('#accPhotoInput').click());
+$('#accPhotoDel').addEventListener('click', () => setPhoto(null));
+$('#accPhotoInput').addEventListener('change', async e => {
+  const f = e.target.files[0]; e.target.value = '';
+  if (!f) return;
+  if (!f.type.startsWith('image/')) return accMsg('Scegli un\'immagine (JPG, PNG…)');
+  try { await setPhoto(await photoToDataURL(f)); }
+  catch { accMsg('Questa immagine non si riesce ad aprire, prova con un\'altra.'); }
 });
 $('#accountDialog').addEventListener('close', async () => {
   const v = $('#accountDialog').returnValue;

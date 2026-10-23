@@ -24,13 +24,33 @@ async function kv(cmd) {
 }
 const write = data => KV_URL ? kv(['SET', KV_KEY, data]) : fs.promises.writeFile(DB_FILE, data);
 
+// Foto profilo: piccole immagini (data URL) tenute a parte, così il salvataggio della chat resta leggero.
+// Su Upstash stanno nell'hash fano:av (una voce per utente), in locale in data/avatars.json.
+const AV_FILE = path.join(__dirname, 'data', 'avatars.json');
+const avatars = new Map(); // nick minuscolo -> data URL
+async function loadAvatars() {
+  if (KV_URL) {
+    const flat = await kv(['HGETALL', 'fano:av']) || [];
+    for (let i = 0; i < flat.length; i += 2) avatars.set(flat[i], flat[i + 1]);
+  } else if (fs.existsSync(AV_FILE)) {
+    for (const [k, v] of Object.entries(JSON.parse(fs.readFileSync(AV_FILE, 'utf8')))) avatars.set(k, v);
+  }
+}
+function storeAvatar(key, img) {
+  if (img) avatars.set(key, img); else avatars.delete(key);
+  const p = KV_URL ? kv(img ? ['HSET', 'fano:av', key, img] : ['HDEL', 'fano:av', key])
+    : fs.promises.writeFile(AV_FILE, JSON.stringify(Object.fromEntries(avatars)));
+  return p.catch(e => console.error('Salvataggio foto fallito:', e.message));
+}
+
 let db = { users: {}, piazza: [], dms: [], meetups: [] };
 async function loadDb() {
   for (let i = 1; ; i++) {
     try {
       const raw = KV_URL ? await kv(['GET', KV_KEY]) : fs.existsSync(DB_FILE) ? fs.readFileSync(DB_FILE, 'utf8') : null;
       if (raw) Object.assign(db, JSON.parse(raw));
-      return console.log(`Dati da ${KV_URL ? 'Upstash' : 'file locale'}: ${Object.keys(db.users).length} utenti`);
+      await loadAvatars();
+      return console.log(`Dati da ${KV_URL ? 'Upstash' : 'file locale'}: ${Object.keys(db.users).length} utenti, ${avatars.size} foto`);
     } catch (e) {
       // meglio non partire che partire vuoti e sovrascrivere i dati salvati
       console.error(`Lettura dati fallita (tentativo ${i}):`, e.message);
@@ -70,7 +90,8 @@ const joinHits = new Map(); // ip -> timestamp delle nuove registrazioni (anti-s
 const ipOf = req => req.headers['cf-connecting-ip'] || String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
 const LOC_TTL = 30 * 60e3; // una posizione condivisa vale 30 minuti
 const freshLoc = u => u.loc && Date.now() - u.loc.at < LOC_TTL ? u.loc : null;
-const pub = u => ({ nick: u.nick, color: u.color, emoji: u.emoji || '🙂', since: u.since, seen: u.seen || 0, loc: freshLoc(u) });
+const pub = u => ({ nick: u.nick, color: u.color, emoji: u.emoji || '🙂', since: u.since, seen: u.seen || 0, loc: freshLoc(u), av: u.av || 0 });
+const blocks = (a, b) => !!a.blocked?.includes(b.nick); // a ha bloccato b
 
 function send(res, ev, data) { res.write(`event: ${ev}\ndata: ${JSON.stringify(data)}\n\n`); }
 
@@ -98,6 +119,7 @@ function initData(u) {
     dms: db.dms.filter(m => m.from === u.nick || m.to === u.nick).slice(-500),
     meetups: db.meetups, online: online(),
     users: Object.values(db.users).map(pub),
+    blocked: u.blocked || [],
   };
 }
 function goneOffline(u) { u.seen = Date.now(); save(); broadcast('presence', { online: online(), left: pub(u) }); }
@@ -113,10 +135,10 @@ function json(res, code, obj) {
   res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(JSON.stringify(obj));
 }
-function body(req) {
+function body(req, max = 8000) {
   return new Promise((ok, ko) => {
     let s = '';
-    req.on('data', c => { s += c; if (s.length > 8000) { ko(new Error('big')); req.destroy(); } });
+    req.on('data', c => { s += c; if (s.length > max) { ko(new Error('big')); req.destroy(); } });
     req.on('end', () => { try { ok(JSON.parse(s || '{}')); } catch (e) { ko(e); } });
   });
 }
@@ -166,6 +188,8 @@ const routes = {
     } else {
       const to = db.users[String(b.to).toLowerCase()];
       if (!to) return json(res, 404, { error: 'Utente non trovato' });
+      if (blocks(u, to)) return json(res, 403, { error: `Hai bloccato ${to.nick}: sbloccalo per scrivergli.` });
+      if (blocks(to, u)) return json(res, 403, { error: 'Non puoi inviare messaggi privati a questo utente.' });
       m.to = to.nick; db.dms.push(m); db.dms = db.dms.slice(-2000);
       emit('dm', m, [u.nick, to.nick]);
     }
@@ -190,9 +214,40 @@ const routes = {
     db.dms = db.dms.filter(m => m.from !== u.nick && m.to !== u.nick);
     db.meetups.forEach(m => { m.people = m.people.filter(n => n !== u.nick); });
     db.meetups = db.meetups.filter(m => m.people.length);
+    for (const o of Object.values(db.users)) if (o.blocked) o.blocked = o.blocked.filter(n => n !== u.nick);
+    if (avatars.has(u.nick.toLowerCase())) storeAvatar(u.nick.toLowerCase(), null);
     for (const r of clients.get(u.token) || []) r.end();
     clients.delete(u.token); pollers.delete(u.token);
     save(); broadcast('gone', { nick: u.nick }); json(res, 200, { ok: true });
+  },
+  // Foto profilo: il telefono la ritaglia a 192×192 e la manda come JPEG/WebP/PNG in base64 (max ~50 KB).
+  'POST /api/avatar': async (req, res) => {
+    const b = await body(req, 90000); const u = auth(b, res, true); if (!u) return;
+    const img = b.image ? String(b.image) : null;
+    if (img && (img.length > 80000 || !/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/]+=*$/.test(img)))
+      return json(res, 400, { error: 'Immagine non valida o troppo grande.' });
+    await storeAvatar(u.nick.toLowerCase(), img);
+    u.av = img ? Date.now() : 0; save();
+    broadcast('user', pub(u)); json(res, 200, { av: u.av });
+  },
+  'GET /api/avatar': (req, res, url) => {
+    const img = avatars.get(String(url.searchParams.get('nick') || '').toLowerCase());
+    if (!img) { res.writeHead(404); return res.end(); }
+    const [, type, data] = img.match(/^data:(image\/\w+);base64,(.*)$/);
+    // la versione (?v=) cambia a ogni nuova foto, quindi il browser può tenerla in cache a lungo
+    res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'public, max-age=31536000, immutable', 'X-Content-Type-Options': 'nosniff' });
+    res.end(Buffer.from(data, 'base64'));
+  },
+  // Blocca/sblocca: niente più messaggi privati in nessuna delle due direzioni; i suoi messaggi spariscono per chi blocca.
+  'POST /api/block': async (req, res) => {
+    const b = await body(req); const u = auth(b, res, true); if (!u) return;
+    const other = db.users[String(b.nick || '').toLowerCase()];
+    if (!other || other === u) return json(res, 404, { error: 'Utente non trovato' });
+    const list = new Set(u.blocked || []);
+    if (b.on) list.add(other.nick); else list.delete(other.nick);
+    u.blocked = [...list]; save();
+    emit('blocks', { blocked: u.blocked }, [u.nick]);
+    json(res, 200, { blocked: u.blocked });
   },
   'POST /api/meetup': async (req, res) => {
     const b = await body(req); const u = auth(b, res); if (!u) return;

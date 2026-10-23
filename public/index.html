@@ -91,6 +91,7 @@
     <!-- Chat -->
     <section class="view" data-view="chat">
       <div class="convs" id="convs"></div>
+      <div class="conv-bar" id="convBar" hidden></div>
       <div class="loc-bar" id="locBar"></div>
       <div class="messages" id="messages" aria-live="polite"></div>
       <form class="composer" id="composer" autocomplete="off">
@@ -152,7 +153,14 @@
 <!-- Modale account -->
 <dialog id="accountDialog" class="dialog">
   <form method="dialog">
-    <div class="acc-head"><span class="avatar" id="accAvatar"></span><div><h3 id="accNick"></h3><p>Il tuo account su questo dispositivo</p></div></div>
+    <div class="acc-head">
+      <button type="button" class="acc-photo" id="accPhotoBtn" title="Cambia foto profilo"><span class="avatar" id="accAvatar"></span><i>📷</i></button>
+      <div><h3 id="accNick"></h3><p>Il tuo account su questo dispositivo</p>
+        <div class="acc-photo-actions"><button type="button" id="accPhotoPick">Cambia foto</button><button type="button" id="accPhotoDel">Rimuovi</button></div>
+        <p class="acc-msg" id="accMsg" role="status"></p>
+      </div>
+    </div>
+    <input type="file" id="accPhotoInput" accept="image/*" hidden>
     <button value="logout" class="acc-btn">🚪 Esci<small>Il nickname resta tuo: rientri quando vuoi.</small></button>
     <button value="delete" class="acc-btn danger">🗑️ Elimina il mio account<small>Cancella per sempre nickname, messaggi e partecipazioni agli incontri.</small></button>
     <div class="dialog-actions"><button value="cancel" class="btn-ghost">Chiudi</button></div>

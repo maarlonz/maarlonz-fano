@@ -1,3 +1,4 @@
 # dati degli utenti (nickname, token, chat): restano sul server, mai su GitHub
 data/db.json
 node_modules/
+data/avatars.json

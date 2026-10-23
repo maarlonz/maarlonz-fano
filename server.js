@@ -9,13 +9,50 @@ const PUB = path.join(__dirname, 'public');
 const DB_FILE = path.join(__dirname, 'data', 'db.json');
 const PLACES_FILE = path.join(__dirname, 'data', 'places.json');
 
-let db = { users: {}, piazza: [], dms: [], meetups: [] };
-try { db = Object.assign(db, JSON.parse(fs.readFileSync(DB_FILE, 'utf8'))); } catch {}
-let saveTimer = null;
-function save() {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => fs.writeFile(DB_FILE, JSON.stringify(db), () => {}), 400);
+// Archivio: Upstash Redis se configurato (dati permanenti anche quando Render riavvia), altrimenti il file locale.
+const KV_URL = process.env.UPSTASH_REDIS_REST_URL, KV_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+const KV_KEY = 'fano:db';
+async function kv(cmd) {
+  const r = await fetch(KV_URL, { method: 'POST', body: JSON.stringify(cmd),
+    headers: { Authorization: `Bearer ${KV_TOKEN}`, 'Content-Type': 'application/json' } });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || j.error) throw new Error(j.error || 'HTTP ' + r.status);
+  return j.result;
 }
+const write = data => KV_URL ? kv(['SET', KV_KEY, data]) : fs.promises.writeFile(DB_FILE, data);
+
+let db = { users: {}, piazza: [], dms: [], meetups: [] };
+async function loadDb() {
+  for (let i = 1; ; i++) {
+    try {
+      const raw = KV_URL ? await kv(['GET', KV_KEY]) : fs.existsSync(DB_FILE) ? fs.readFileSync(DB_FILE, 'utf8') : null;
+      if (raw) Object.assign(db, JSON.parse(raw));
+      return console.log(`Dati da ${KV_URL ? 'Upstash' : 'file locale'}: ${Object.keys(db.users).length} utenti`);
+    } catch (e) {
+      // meglio non partire che partire vuoti e sovrascrivere i dati salvati
+      console.error(`Lettura dati fallita (tentativo ${i}):`, e.message);
+      if (i >= 5) process.exit(1);
+      await new Promise(ok => setTimeout(ok, 2000 * i));
+    }
+  }
+}
+// Salvataggi raggruppati: al massimo uno ogni 1,5 s su Upstash, mai due in contemporanea.
+let saveTimer = null, saving = null, dirty = false;
+function save() { dirty = true; if (!saveTimer) saveTimer = setTimeout(flush, KV_URL ? 1500 : 400); }
+async function flush() {
+  clearTimeout(saveTimer); saveTimer = null;
+  if (saving || !dirty) return saving;
+  dirty = false;
+  saving = write(JSON.stringify(db))
+    .catch(e => { console.error('Salvataggio fallito:', e.message); dirty = true; })
+    .finally(() => { saving = null; if (dirty) save(); });
+  return saving;
+}
+// Render spegne il server con SIGTERM: prima si salva l'ultima modifica.
+for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, async () => {
+  await saving; if (dirty) await flush();
+  process.exit(0);
+});
 
 const clients = new Map(); // token -> Set(res) delle connessioni SSE
 const pollers = new Map(); // token -> ultimo long-poll (ms)
@@ -125,7 +162,7 @@ const routes = {
     } else {
       const to = db.users[String(b.to).toLowerCase()];
       if (!to) return json(res, 404, { error: 'Utente non trovato' });
-      m.to = to.nick; db.dms.push(m); db.dms = db.dms.slice(-3000);
+      m.to = to.nick; db.dms.push(m); db.dms = db.dms.slice(-2000);
       emit('dm', m, [u.nick, to.nick]);
     }
     save(); json(res, 200, { ok: true });
@@ -211,7 +248,7 @@ const routes = {
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json' };
 
-http.createServer(async (req, res) => {
+const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://x');
   const r = routes[`${req.method} ${url.pathname}`];
   if (r) { try { await r(req, res, url); } catch (e) { json(res, 400, { error: 'Richiesta non valida' }); } return; }
@@ -225,4 +262,5 @@ http.createServer(async (req, res) => {
       'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Permissions-Policy': 'geolocation=(self)' });
     res.end(data);
   });
-}).listen(PORT, '0.0.0.0', () => console.log(`Fano Insieme su http://localhost:${PORT}`));
+});
+loadDb().then(() => server.listen(PORT, '0.0.0.0', () => console.log(`Fano Insieme su http://localhost:${PORT}`)));

@@ -6,7 +6,9 @@ Registrazione solo con nickname: il server dà un token salvato nel browser che 
 ## Avvio
     node server.js          # http://localhost:8770  (PORT=xxxx per cambiare porta)
 
-Nessuna dipendenza npm. I dati utenti/chat/incontri stanno in `data/db.json`.
+Nessuna dipendenza npm. I dati utenti/chat/incontri stanno in `data/db.json`,
+oppure su Upstash Redis se sono impostate `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`
+(così sopravvivono ai riavvii di Render; chiave `fano:db`).
 
 ## Metterlo online (dal PC)
 Doppio clic su `AvviaFanoPubblico.bat`: avvia il server e un tunnel Cloudflare gratuito

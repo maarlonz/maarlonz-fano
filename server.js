@@ -11,8 +11,9 @@ const PLACES_FILE = path.join(__dirname, 'data', 'places.json');
 
 // Archivio: Upstash Redis se configurato (dati permanenti anche quando Render riavvia), altrimenti il file locale.
 // (tolti spazi e virgolette: copiando dal riquadro ".env" di Upstash finiscono spesso nel valore)
-const envClean = v => String(v || '').trim().replace(/^["']+|["']+$/g, '').trim();
-const KV_URL = envClean(process.env.UPSTASH_REDIS_REST_URL), KV_TOKEN = envClean(process.env.UPSTASH_REDIS_REST_TOKEN);
+const envClean = v => String(v || '').replace(/[\s​-‍﻿"'“”‘’`]/g, '');
+const rawUrl = envClean(process.env.UPSTASH_REDIS_REST_URL);
+const KV_URL = (rawUrl.match(/https:\/\/[^/]+/) || [rawUrl])[0], KV_TOKEN = envClean(process.env.UPSTASH_REDIS_REST_TOKEN);
 const KV_KEY = 'fano:db';
 async function kv(cmd) {
   const r = await fetch(KV_URL, { method: 'POST', body: JSON.stringify(cmd),
@@ -33,6 +34,7 @@ async function loadDb() {
     } catch (e) {
       // meglio non partire che partire vuoti e sovrascrivere i dati salvati
       console.error(`Lettura dati fallita (tentativo ${i}):`, e.message);
+      if (i === 1 && KV_URL) console.error(`  Controlla su Render > Environment: UPSTASH_REDIS_REST_URL deve essere solo https://….upstash.io (ora: ${JSON.stringify(KV_URL)}), UPSTASH_REDIS_REST_TOKEN solo il token (${KV_TOKEN.length} caratteri).`);
       if (i >= 5) process.exit(1);
       await new Promise(ok => setTimeout(ok, 2000 * i));
     }

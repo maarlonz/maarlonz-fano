@@ -377,6 +377,17 @@ const HANDLERS = {
     if (d.joined) { S.users.set(d.joined.nick, d.joined); if (d.joined.nick !== S.me.nick) toast(d.joined, 'è appena entrato in piazza 👋', () => openConv(d.joined.nick)); }
     renderPeople(); renderPeoplePins(); renderConvs();
   },
+  // un utente ha eliminato il suo account: sparisce da liste, chat e incontri
+  gone({ nick }) {
+    if (nick === S.me?.nick) return;
+    S.users.delete(nick); S.online = S.online.filter(n => n !== nick);
+    S.piazza = S.piazza.filter(m => m.from !== nick);
+    S.dms = S.dms.filter(m => m.from !== nick && m.to !== nick);
+    S.meetups.forEach(m => { m.people = m.people.filter(n => n !== nick); });
+    S.meetups = S.meetups.filter(m => m.people.length);
+    if (S.conv === nick) S.conv = 'piazza';
+    renderPeople(); renderPeoplePins(); renderConvs(); renderMessages(); renderMeetups(); renderMeetPins(); updateBadges();
+  },
 };
 
 let es = null, pollCtl = null, connGen = 0;
@@ -882,7 +893,21 @@ $('#locateBtn').addEventListener('click', async () => {
   b.classList.remove('busy');
 });
 
-$('#meChip').addEventListener('click', () => { if (confirm(`Uscire da Fano Insieme?\nIl nickname "${S.me.nick}" resta riservato su questo dispositivo.`)) logout(); });
+$('#meChip').addEventListener('click', () => {
+  $('#accNick').textContent = S.me.nick; setAvatar($('#accAvatar'), S.me);
+  $('#accountDialog').showModal();
+});
+$('#accountDialog').addEventListener('close', async () => {
+  const v = $('#accountDialog').returnValue;
+  if (v === 'logout') logout();
+  if (v !== 'delete') return;
+  if (!confirm(`Eliminare per sempre l'account "${S.me.nick}"?\nNickname, messaggi e partecipazioni agli incontri verranno cancellati. Non si può annullare.`)) return;
+  try {
+    await api('/api/leave', {});
+    S.me = null; store.set('fano.me', null);
+    logout(); $('#joinBtn span').textContent = 'Entra';
+  } catch (err) { toast({ nick: 'Fano Insieme', emoji: '⚠️' }, err.message); }
+});
 function logout() {
   disconnect();
   $('#app').hidden = true;

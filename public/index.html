@@ -62,7 +62,7 @@
       <button class="icon-btn" id="helpBtn" title="Tutorial" aria-label="Apri il tutorial"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.8"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/></svg></button>
       <button class="icon-btn" id="locateBtn" title="La mia posizione" aria-label="La mia posizione"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7.5"/></svg></button>
       <button class="icon-btn" id="themeBtn" title="Tema" aria-label="Cambia tema"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-      <button class="me-chip" id="meChip" title="Esci"><span class="avatar" id="meAvatar"></span><span id="meNick"></span></button>
+      <button class="me-chip" id="meChip" title="Il tuo account"><span class="avatar" id="meAvatar"></span><span id="meNick"></span></button>
     </div>
   </header>
 
@@ -148,6 +148,16 @@
     </div>
   </div>
 </div>
+
+<!-- Modale account -->
+<dialog id="accountDialog" class="dialog">
+  <form method="dialog">
+    <div class="acc-head"><span class="avatar" id="accAvatar"></span><div><h3 id="accNick"></h3><p>Il tuo account su questo dispositivo</p></div></div>
+    <button value="logout" class="acc-btn">🚪 Esci<small>Il nickname resta tuo: rientri quando vuoi.</small></button>
+    <button value="delete" class="acc-btn danger">🗑️ Elimina il mio account<small>Cancella per sempre nickname, messaggi e partecipazioni agli incontri.</small></button>
+    <div class="dialog-actions"><button value="cancel" class="btn-ghost">Chiudi</button></div>
+  </form>
+</dialog>
 
 <!-- Modale incontro -->
 <dialog id="meetDialog" class="dialog">

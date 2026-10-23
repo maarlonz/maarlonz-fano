@@ -455,6 +455,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round
 .dialog input, .dialog select, .dialog textarea { padding: 11px 13px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--text); outline: 0; font-size: 16px; resize: vertical; }
 .dialog input:focus, .dialog select:focus, .dialog textarea:focus { border-color: var(--accent); }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+.acc-head { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.acc-head .avatar { width: 48px; height: 48px; font-size: 24px; border-radius: 16px; }
+.acc-head h3 { margin: 0; }
+.acc-head p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.acc-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 14px; background: var(--surface-2); font-weight: 600; font-size: 15px; transition: background .2s, transform .2s var(--ease); }
+.acc-btn:hover { transform: translateY(-1px); }
+.acc-btn small { font-weight: 400; font-size: 12.5px; color: var(--muted); }
+.acc-btn.danger { color: #d63c3c; background: color-mix(in srgb, #d63c3c 10%, transparent); }
 .pick-list { list-style: none; margin: 0; padding: 0; max-height: 46vh; overflow-y: auto; }
 .pick-list li { padding: 10px; border-radius: 12px; cursor: pointer; display: flex; gap: 10px; align-items: center; font-size: 14px; }
 .pick-list li:hover { background: var(--surface-2); }

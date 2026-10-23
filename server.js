@@ -182,6 +182,18 @@ const routes = {
     }
     save(); broadcast('user', pub(u)); json(res, 200, { ok: true });
   },
+  // Eliminazione dell'account: via utente, messaggi, messaggi privati e partecipazioni agli incontri.
+  'POST /api/leave': async (req, res) => {
+    const b = await body(req); const u = auth(b, res, true); if (!u) return;
+    delete db.users[u.nick.toLowerCase()];
+    db.piazza = db.piazza.filter(m => m.from !== u.nick);
+    db.dms = db.dms.filter(m => m.from !== u.nick && m.to !== u.nick);
+    db.meetups.forEach(m => { m.people = m.people.filter(n => n !== u.nick); });
+    db.meetups = db.meetups.filter(m => m.people.length);
+    for (const r of clients.get(u.token) || []) r.end();
+    clients.delete(u.token); pollers.delete(u.token);
+    save(); broadcast('gone', { nick: u.nick }); json(res, 200, { ok: true });
+  },
   'POST /api/meetup': async (req, res) => {
     const b = await body(req); const u = auth(b, res); if (!u) return;
     const when = Number(new Date(b.when));
